@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "fixPrebuild": "yarn fixStyle && yarn fixLint",
+    "fixStyle": "prettier \"**/*.{ts,tsx,js,jsx,json}\" --write",
+    "fixLint": "yarn esLint -- --fix",
+    "esLint": "eslint \"{src,test}/**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
     "next": "9.5.2",
