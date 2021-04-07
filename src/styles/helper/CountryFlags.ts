@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 /**
  * NOTE: UI kit changed so have to update this as component and document with Storybook letter on. Also remove flag images letter on.
@@ -271,7 +271,7 @@ type countryName =
   | 'Wallis-and-futuna'
   | 'Western-sahara'
   | 'Yemen'
-  | 'Zambia'
+  | 'Zambia';
 
 const CountryFlag = styled.i<{ name: countryName }>`
   display: block;
@@ -282,6 +282,6 @@ const CountryFlag = styled.i<{ name: countryName }>`
   background-size: cover;
   background-image: url('assets/images/country-flags/${props =>
     props.name}-flag.png');
-`
+`;
 
-export default CountryFlag
+export default CountryFlag;
