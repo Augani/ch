@@ -1,6 +1,6 @@
 import React from 'react';
 import { addDecorator, addParameters, configure } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
+// import centered from '@storybook/addon-centered/react';
 
 import { Wrapper } from './Wrapper';
 

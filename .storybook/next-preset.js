@@ -15,7 +15,7 @@ module.exports = {
     // TypeScript
     newConfig.module.rules.push({
       test: /\.(ts|tsx)$/,
-      include: [path.resolve(__dirname, '../components')],
+      include: [path.resolve(__dirname, '../src/components')],
       use: [
         {
           loader: 'babel-loader',

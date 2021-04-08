@@ -1,0 +1,19 @@
+import {
+  Title,
+  Meta,
+  ColorPalette,
+  ColorItem
+} from '@storybook/addon-docs/blocks';
+import { theme } from '../../src/styles/theme';
+
+<Meta title='Design System/Color Pallete' />
+
+<Title title='Color Pallete' />
+
+<ColorPalette>
+  <ColorItem
+    title='Common'
+    subtitle='White | Light | Extra Light'
+    colors={[theme.colors.white, theme.colors.light, theme.colors.extraLight]}
+  />
+</ColorPalette>
