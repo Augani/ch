@@ -2,21 +2,21 @@ import React from 'react';
 import Head from 'next/head';
 
 import CoinhavenLogo from '../assets/coinhaven.svg';
-import { Container } from '../styles/pages/Home';
+import { AboutUsStyle } from './Styled';
 
-const Home: React.FC = () => {
+const AboutUs: React.FC = () => {
   return (
     <>
-      <Container>
-        <Head>
-          <title>Homepage</title>
-        </Head>
+      <Head>
+        <title>About Us | Coinhaven</title>
+      </Head>
+      <AboutUsStyle>
         <CoinhavenLogo />
         <h1>NextJS + typescript</h1>
         <p>Lorem, ipsum dolor.</p>
-      </Container>
+      </AboutUsStyle>
     </>
   );
 };
 
-export default Home;
+export default AboutUs;

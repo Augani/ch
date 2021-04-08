@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100vw;
+  width: ${props => props.theme.sizes.container()};
   height: 100vh;
 
   display: flex;
