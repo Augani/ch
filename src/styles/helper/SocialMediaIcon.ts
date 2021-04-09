@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 type SocialPlatformName =
   | 'linkedin'
@@ -7,11 +7,11 @@ type SocialPlatformName =
   | 'instagram'
   | 'medium'
   | 'youtube'
-  | 'reddit'
+  | 'reddit';
 
 const SocialMediaIcon = styled.i<{
-  platform: SocialPlatformName
-  color?: string
+  platform: SocialPlatformName;
+  color?: string;
 }>`
   width: 1.875rem;
   height: 1.875rem;
@@ -23,6 +23,6 @@ const SocialMediaIcon = styled.i<{
   color: var(
     ${props => props.color ?? props.theme.socialMediaColor[props.platform]}
   );
-`
+`;
 
-export default SocialMediaIcon
+export default SocialMediaIcon;

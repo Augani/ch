@@ -14,7 +14,7 @@ const colors = {
   green: '#26E29C',
   red: '#F55959',
   orange: '#F7931A'
-}
+};
 
 const pallets = {
   primary: colors.lightBlue,
@@ -23,7 +23,7 @@ const pallets = {
   warning: colors.orange,
   info: colors.lightPurple,
   success: colors.green
-}
+};
 
 const gradients = {
   extraDarkHorizontal:
@@ -35,7 +35,7 @@ const gradients = {
   darkVertical: 'linear-gradient(0deg, #23244B 0.54%, #4E51FF 100%)',
   lightVertical:
     'linear-gradient(0deg, rgba(151, 204, 252, 0) 0.07%, #74BBFC 99.26%)'
-}
+};
 
 const socialMediaColor = {
   linkedin: '#0c66c2',
@@ -45,7 +45,7 @@ const socialMediaColor = {
   medium: '#1c1a19',
   youtube: '#ff0typographyConfig.fontWeightRegular',
   reddit: '#ff4500'
-}
+};
 
 const shadow = {
   one: '0px 0.063 0.25 rgba(52, 60, 68, 0.1)',
@@ -59,7 +59,7 @@ const shadow = {
     '0px 100px 80px rgba(157, 157, 174, 0.07), 0px 22px 24px rgba(157, 157, 174, 0.04), 0px 16px 10px rgba(157, 157, 174, 0.04), 0px 6px 6px rgba(157, 157, 174, 0.03);',
   six:
     '0px 100px 80px rgba(157, 157, 174, 0.07), 0px 41.7776px 33.4221px rgba(157, 157, 174, 0.0503198), 0px 22px 24px rgba(157, 157, 174, 0.04), 0px 16px 10px rgba(157, 157, 174, 0.04), 0px 6px 6px rgba(157, 157, 174, 0.03), 0px 2.76726px 2.21381px rgba(157, 157, 174, 0.0196802)'
-}
+};
 
 const typographyConfig = {
   fontFamilyOpenSans: '"Open Sans", sans-serif',
@@ -73,7 +73,7 @@ const typographyConfig = {
   fontWeightBold: 700,
   fontWeightExtraBold: 800,
   fontWeightBlack: 900
-}
+};
 
 const typographyVariant = {
   h1: {
@@ -184,26 +184,26 @@ const typographyVariant = {
     lineHeight: '16px',
     letterSpacing: '1px'
   }
-}
+};
 
 const convertPxToRem = (pxSize: number): string => {
   // eslint-disable-next-line prefer-const
-  let defaultPxSize = 16
+  let defaultPxSize = 16;
   /* // can be fix letter on
   if(currentResolution < breakPoints.sm){
     defaultPxSize = 14;
   }
   */
-  return `${pxSize / defaultPxSize}rem`
-}
+  return `${pxSize / defaultPxSize}rem`;
+};
 
 const typography = {
   variant: typographyVariant,
   config: typographyConfig,
   pxToRem: convertPxToRem
-}
+};
 
-const breakPoints = {}
+const breakPoints = {};
 
 const mixins = {
   // Can be improve letter on
@@ -224,7 +224,7 @@ const mixins = {
         );
     }
     `
-}
+};
 
 const theme = {
   pallets,
@@ -235,6 +235,6 @@ const theme = {
   typography,
   breakPoints,
   mixins
-}
+};
 
-export default theme
+export default theme;

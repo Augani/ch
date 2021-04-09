@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# vs code
+.history
+
+# temp
+/src/assets/country-flags

@@ -1,0 +1,14 @@
+.node-cache/
+.next/
+.vscode/
+dist/
+yarn.lock
+package-lock.json
+node_modules/
+.history/
+test
+.cache/
+build/
+data/
+*.bundle.js
+storybook-static/
