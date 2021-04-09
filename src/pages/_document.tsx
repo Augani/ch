@@ -39,16 +39,19 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt">
+      <Html lang='pt'>
         <Head>
-          <meta charSet="utf-8" />
+          <meta charSet='utf-8' />
 
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
-            rel="stylesheet"
+            href='https://fonts.googleapis.com/css?family=Roboto:400,500,700'
+            rel='stylesheet'
           />
 
-          <link rel="icon" href="https://coinhaven.com/wp-content/uploads/2020/08/favicon.png" />
+          <link
+            rel='icon'
+            href='https://coinhaven.com/wp-content/uploads/2020/08/favicon.png'
+          />
         </Head>
         <body>
           <Main />
