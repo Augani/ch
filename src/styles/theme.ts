@@ -1,10 +1,13 @@
 const colors = {
+  darkerBlue: '#23244b',
   darkBlue: '#00004C',
   blue: '#001ECB',
   lightBlue: '#4E51FF',
   darkPurple: '#5A5A81',
   purple: '#A2ADEB',
   lightPurple: '#D9DAF2',
+  lightGray: '#FBFBFB',
+  darkGray: '#EAEAEA',
   light: '#EBEBF1',
   extraLight: '#F7F7FB',
   white: '#FFFFFF',

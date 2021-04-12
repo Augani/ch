@@ -51,6 +51,11 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        {/* This FontAwesome we are using for Social Media Icon at GuestLayout/Footer. Remove this once we make a component for icons to use globally */}
+        <script
+          src='https://kit.fontawesome.com/631f446866.js'
+          crossOrigin='anonymous'
+        ></script>
       </Html>
     );
   }
