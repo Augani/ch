@@ -34,7 +34,9 @@ const gradients = {
   extraDarkVertical: 'linear-gradient(0deg, #0E0F25 34.02%, #23244B 88.52%)',
   darkVertical: 'linear-gradient(0deg, #23244B 0.54%, #4E51FF 100%)',
   lightVertical:
-    'linear-gradient(0deg, rgba(151, 204, 252, 0) 0.07%, #74BBFC 99.26%)'
+    'linear-gradient(0deg, rgba(151, 204, 252, 0) 0.07%, #74BBFC 99.26%)',
+  lightDiagonal:
+    'linear-gradient(310.5deg, #CEDCFF 9.61%, rgba(208, 227, 255, 0) 45.96%);'
 };
 
 const socialMediaColor = {

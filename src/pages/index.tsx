@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import CoinhavenLogo from '../assets/coinhaven.svg';
+import CoinhavenLogo from '../assets/coinhavenDark.svg';
 import { Container } from '../styles/pages/Home';
 
 const Home: React.FC = () => {
