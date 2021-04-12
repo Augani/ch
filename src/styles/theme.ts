@@ -2,6 +2,7 @@ const colors = {
   darkBlue: '#00004C',
   blue: '#001ECB',
   lightBlue: '#4E51FF',
+  extraLightBlue: '#001DC6',
   darkPurple: '#5A5A81',
   purple: '#A2ADEB',
   lightPurple: '#D9DAF2',
@@ -13,7 +14,9 @@ const colors = {
   black: '#111111',
   green: '#26E29C',
   red: '#F55959',
-  orange: '#F7931A'
+  orange: '#F7931A',
+  lightGray: '#9495b9',
+  darkGray: '#9597A1'
 };
 
 const pallets = {
@@ -36,7 +39,11 @@ const gradients = {
   lightVertical:
     'linear-gradient(0deg, rgba(151, 204, 252, 0) 0.07%, #74BBFC 99.26%)',
   lightDiagonal:
-    'linear-gradient(310.5deg, #CEDCFF 9.61%, rgba(208, 227, 255, 0) 45.96%);'
+    'linear-gradient(310.5deg, #CEDCFF 9.61%, rgba(208, 227, 255, 0) 45.96%);',
+  lightGray:
+    'linear-gradient(0deg, rgba(78, 81, 255, 0.16), rgba(78, 81, 255, 0.16));',
+  lightWhite:
+    'linear-gradient(0deg, rgba(78, 81, 255, 0.06), rgba(78, 81, 255, 0.06)), #FFFFFF;'
 };
 
 const socialMediaColor = {
