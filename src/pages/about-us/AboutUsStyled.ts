@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AboutUsStyled = styled.div`
+const AboutUsStyled = styled.div`
   .container {
     width: ${props => props.theme.sizes.container()};
     margin: 0 auto;
@@ -278,3 +278,5 @@ export const AboutUsStyled = styled.div`
     }
   }
 `;
+
+export default AboutUsStyled;

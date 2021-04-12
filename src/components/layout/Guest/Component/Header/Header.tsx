@@ -10,7 +10,7 @@ const Header: FunctionComponent = () => {
         <div className='logo'>
           <Link href='/'>
             <a>
-              <img src='/assets/logos/bright.png' alt='Coinhaven Logo' />
+              <img src='/assets/logos/light.png' alt='Coinhaven Logo' />
             </a>
           </Link>
         </div>

@@ -9,7 +9,7 @@ const Home: FunctionComponent = () => {
       <Head>
         <title>Coinhaven</title>
       </Head>
-      <HomeStyled>Hello Home page</HomeStyled>
+      <HomeStyled>Hello Home page us page</HomeStyled>
     </GuestLayout>
   );
 };

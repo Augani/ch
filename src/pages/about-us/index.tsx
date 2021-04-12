@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { AboutUsStyled } from './AboutUsStyled';
+import AboutUsStyled from './AboutUsStyled';
 
 import Head from 'next/head';
 
