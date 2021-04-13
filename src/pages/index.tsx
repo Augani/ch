@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Head from 'next/head';
+import GuestLayout from '@layout/Guest/GuestLayout';
+import HomeStyled from '@styles/pages/HomeStyled';
 
-import CoinhavenLogo from '../assets/coinhaven.svg';
-import { Container } from '../styles/pages/Home';
-
-const Home: React.FC = () => {
+const Home: FunctionComponent = () => {
   return (
-    <Container>
+    <GuestLayout>
       <Head>
-        <title>Homepage</title>
+        <title>Coinhaven</title>
       </Head>
-      <CoinhavenLogo />
-      <h1>NextJS + typescript</h1>
-      <p>Lorem, ipsum dolor.</p>
-    </Container>
+      <HomeStyled>Hello Home page us page</HomeStyled>
+    </GuestLayout>
   );
 };
 

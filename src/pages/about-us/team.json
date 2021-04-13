@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Member Name",
+    "position": "Co-founder & CEO",
+    "image": "",
+    "linkedIn": "",
+    "description": ""
+  },
+  {
+    "name": "Member Name",
+    "position": "Co-founder & CEO",
+    "image": "",
+    "linkedIn": "",
+    "description": ""
+  },
+  {
+    "name": "Hossein Namazian",
+    "position": "Chief Technical Officer",
+    "image": "/assets/team/1.png",
+    "linkedIn": "https://www.linkedin.com/in/hossein-namazian/",
+    "description": ""
+  },
+  {
+    "name": "Linda Batzing",
+    "position": "Finance Officer",
+    "image": "/assets/team/2.png",
+    "linkedIn": "https://www.linkedin.com/in/lindabatzing/",
+    "description": ""
+  },
+  {
+    "name": "Vidhi Gupta",
+    "position": "Product Owner",
+    "image": "/assets/team/3.png",
+    "linkedIn": "https://www.linkedin.com/in/vidhii7/",
+    "description": ""
+  },
+  {
+    "name": "Deborah Olateru",
+    "position": "Account Manager",
+    "image": "/assets/team/13.jpg",
+    "linkedIn": "https://www.linkedin.com/in/deborah-olateru/",
+    "description": ""
+  },
+  {
+    "name": "George Koynov",
+    "position": "Copywriter & Content Creator",
+    "image": "/assets/team/14.jpg",
+    "linkedIn": "https://www.linkedin.com/in/berlincopywriter/",
+    "description": ""
+  },
+  {
+    "name": "Dmitry Medvedev",
+    "position": "Lead Backend Engineer",
+    "image": "/assets/team/4.png",
+    "linkedIn": "https://www.linkedin.com/in/dmitrymedvedev/",
+    "description": ""
+  },
+  {
+    "name": "Rafael Ferreira",
+    "position": "Lead Frontend Engineer",
+    "image": "/assets/team/5.png",
+    "linkedIn": "https://www.linkedin.com/in/andersonrafaelferreira/",
+    "description": ""
+  },
+  {
+    "name": "Majid Faridi",
+    "position": "Senior DevOps Engineer",
+    "image": "/assets/team/6.png",
+    "linkedIn": "https://www.linkedin.com/in/majid-faridi/",
+    "description": ""
+  },
+  {
+    "name": "Yasaman Heydarzadeh",
+    "position": "Senior Product Designer",
+    "image": "/assets/team/7.png",
+    "linkedIn": "https://www.linkedin.com/in/yasaman-heydarzadeh/",
+    "description": ""
+  },
+  {
+    "name": "Krupal Patel",
+    "position": "Senior Frontend Engineer",
+    "image": "/assets/team/8.png",
+    "linkedIn": "https://www.linkedin.com/in/krupalpatel92/",
+    "description": ""
+  },
+  {
+    "name": "Tatiana Osiichuk",
+    "position": "UI/UX Designer",
+    "image": "/assets/team/9.png",
+    "linkedIn": "https://www.linkedin.com/in/tatiana-os/",
+    "description": ""
+  },
+  {
+    "name": "Ubaid Rahman",
+    "position": "Backend Developer",
+    "image": "/assets/team/10.png",
+    "linkedIn": "https://www.linkedin.com/in/ubaidbutt/",
+    "description": ""
+  },
+  {
+    "name": "Augustus Otu",
+    "position": "Frontend Developer",
+    "image": "/assets/team/11.png",
+    "linkedIn": "https://www.linkedin.com/in/augustusotu/",
+    "description": ""
+  },
+  {
+    "name": "Liana Zaporozhets",
+    "position": "Junior UI/UX Designer",
+    "image": "/assets/team/12.png",
+    "linkedIn": "https://www.linkedin.com/in/liana-zaporozhets-24b73420b",
+    "description": ""
+  }
+]

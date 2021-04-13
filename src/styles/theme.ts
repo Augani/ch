@@ -1,10 +1,13 @@
 const colors = {
+  darkerBlue: '#23244b',
   darkBlue: '#00004C',
   blue: '#001ECB',
   lightBlue: '#4E51FF',
   darkPurple: '#5A5A81',
   purple: '#A2ADEB',
   lightPurple: '#D9DAF2',
+  lightGray: '#FBFBFB',
+  darkGray: '#EAEAEA',
   light: '#EBEBF1',
   extraLight: '#F7F7FB',
   white: '#FFFFFF',
@@ -203,8 +206,6 @@ const typography = {
   pxToRem: convertPxToRem
 };
 
-const breakPoints = {};
-
 const mixins = {
   // Can be improve letter on
   styledStroke: `
@@ -226,6 +227,42 @@ const mixins = {
     `
 };
 
+const breakPoints = {
+  xs: '414.98px',
+  sm: '780.98px',
+  md: '968.98px',
+  lg: '1366.98px',
+  xl: '1600.98px'
+};
+
+const sizes = {
+  container: (size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'): string => {
+    const containerSize = size === undefined ? 'xl' : size;
+
+    if (containerSize === 'xl') {
+      return '1140px';
+    }
+
+    if (containerSize === 'lg') {
+      return '1140px';
+    }
+
+    if (containerSize === 'md') {
+      return '800px'; // can be any in future
+    }
+
+    if (containerSize === 'sm') {
+      return '500px'; // can be any in future
+    }
+
+    if (containerSize === 'xs') {
+      return '320px'; // can be any in future
+    }
+
+    return '1140px'; // can be any in future
+  }
+};
+
 const theme = {
   pallets,
   colors,
@@ -234,6 +271,7 @@ const theme = {
   shadow,
   typography,
   breakPoints,
+  sizes,
   mixins
 };
 

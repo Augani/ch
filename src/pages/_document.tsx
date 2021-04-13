@@ -42,12 +42,6 @@ export default class MyDocument extends Document {
       <Html lang='pt'>
         <Head>
           <meta charSet='utf-8' />
-
-          <link
-            href='https://fonts.googleapis.com/css?family=Roboto:400,500,700'
-            rel='stylesheet'
-          />
-
           <link
             rel='icon'
             href='https://coinhaven.com/wp-content/uploads/2020/08/favicon.png'
@@ -57,6 +51,11 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        {/* This FontAwesome we are using for Social Media Icon at GuestLayout/Footer. Remove this once we make a component for icons to use globally */}
+        <script
+          src='https://kit.fontawesome.com/631f446866.js'
+          crossOrigin='anonymous'
+        ></script>
       </Html>
     );
   }
