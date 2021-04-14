@@ -2,12 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 
-  body * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   body {
     background: ${props => props.theme.colors.extraLight};
     color: ${props => props.theme.pallets.secondary};
@@ -17,6 +11,13 @@ export default createGlobalStyle`
     padding: 0;
     min-width: 320px;
     font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  body * {
+    box-sizing: border-box;
+    outline: 0;
   }
 
   .font-family-open-sans-pro {
@@ -76,6 +77,14 @@ export default createGlobalStyle`
       border: 0 none;
       outline: none;
       outline-offset: 0;
+  }
+
+  p{
+    font-family: ${props => props.theme.typography.config.fontFamilyOpenSans};
+    font-size: 1.125rem;
+    color: ${props => props.theme.colors.black};
+    line-height: 2;
+    white-space: pre-wrap;
   }
 
 `;
