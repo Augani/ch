@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import CoinhavenLogo from '../../assets/coinhavenDark.svg';
-import { Container } from '../../styles/pages/ForgotPassword';
+import { Container } from './ForgotStyled';
 import { Header } from '../../components/layout/header/header';
 import { Button } from '../../components/ui-base/Button/Button';
 import { TextField } from '../../components/ui-base/TextField/TextField';
