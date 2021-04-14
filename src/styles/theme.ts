@@ -1,3 +1,5 @@
+import React from 'react';
+
 const colors = {
   darkerBlue: '#23244b',
   darkBlue: '#00004C',
@@ -189,6 +191,22 @@ const typographyVariant = {
   }
 };
 
+const jsToCss = (styleObject: React.CSSProperties): string => {
+  const cssString: string[] = [];
+
+  for (const [key, value] of Object.entries(styleObject)) {
+    const styleKeyAry = key.match(/[A-Z]+[^A-Z]*|[^A-Z]+/g);
+
+    if (styleKeyAry !== null) {
+      const styleKey = styleKeyAry.join('-').toLowerCase();
+      const styleValue = value;
+      cssString.push(`${styleKey}: ${styleValue};`);
+    }
+  }
+
+  return cssString.join(' ');
+};
+
 const convertPxToRem = (pxSize: number): string => {
   // eslint-disable-next-line prefer-const
   let defaultPxSize = 16;
@@ -272,7 +290,8 @@ const theme = {
   typography,
   breakPoints,
   sizes,
-  mixins
+  mixins,
+  jsToCss
 };
 
 export default theme;

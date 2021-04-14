@@ -198,6 +198,52 @@ const Home: FunctionComponent = () => {
             </div>
           </div>
         </section>
+
+        {/* Roadmap section */}
+        <section className='roadmap-section'>
+          <div className='container'>
+            <h2>Roadmap</h2>
+            <div className='roadmap-details'>
+              <div className='roadmap-item'>
+                <div className='roadmap-content'>
+                  <h4>june 2021</h4>
+                  <h6>launch</h6>
+                  <p>Instant Exchange Spot exchange P2P trading Bank Account</p>
+                </div>
+              </div>
+              <div className='roadmap-item'>
+                <div className='roadmap-content'>
+                  <h4>july 2021</h4>
+                  <h6>launch</h6>
+                  <p>Regulatory approval for USA and Australia</p>
+                </div>
+              </div>
+              <div className='roadmap-item'>
+                <div className='roadmap-content'>
+                  <h4>September 2021</h4>
+                  <h6>launch</h6>
+                  <p>Margin trading Brokerage OTC Debit card</p>
+                </div>
+              </div>
+              <div className='roadmap-item'>
+                <div className='roadmap-content'>
+                  <h4>December 2021</h4>
+                  <h6>launch</h6>
+                  <p>P2P Lending Coinhaven Lending</p>
+                </div>
+              </div>
+              <div className='roadmap-item'>
+                <div className='roadmap-content'>
+                  <h4>March 2022</h4>
+                  <h6>launch</h6>
+                  <p>Coinhaven Earn. Merchant</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our team section */}
         <section className='our-team-section' id='team'>
           <div className='container'>
             <h3 className='styled-stroke'>Our team</h3>
