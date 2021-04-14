@@ -1,11 +1,7 @@
-import { useRouter } from 'next/router';
-import Link, { LinkProps } from 'next/link';
 import React, { FunctionComponent, Children } from 'react';
-
-interface IActiveLinkProps extends LinkProps {
-  children: React.ReactElement;
-  activeClassName: string;
-}
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import IActiveLinkProps from './IActiveLinkProps';
 
 const ActiveLink: FunctionComponent<IActiveLinkProps> = props => {
   const { children, activeClassName } = props;
@@ -25,7 +21,7 @@ const ActiveLink: FunctionComponent<IActiveLinkProps> = props => {
   return (
     <Link {...props}>
       {React.cloneElement(child, {
-        className: className || null
+        className: className || ''
       })}
     </Link>
   );

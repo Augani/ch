@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import { CountryFlag } from './CountryFlag';
 
 export default {
@@ -11,7 +11,7 @@ export default {
 
 export const SquareFLag = () => {
   const knobProps = {
-    name: 'ind',
+    name: text('Label', 'value'),
     shape: 'square'
   };
 

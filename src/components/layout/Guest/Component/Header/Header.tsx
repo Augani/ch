@@ -1,9 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { HeaderStyled } from './HeaderStyled';
 import Link from 'next/link';
-import ActiveLink from '@utils/ActiveLink';
+import ActiveLink from '@components/utils/ActiveLink/ActiveLink';
+import Modal from '@ui-base/Modal/Modal';
 
 const Header: FunctionComponent = () => {
+  const [openSubscriberForm, setOpenSubscriberForm] = useState(false);
+  const [openContactUsForm, setOpenContactUsForm] = useState(false);
+
   return (
     <HeaderStyled className='header light'>
       <div className='container'>
@@ -24,15 +28,43 @@ const Header: FunctionComponent = () => {
             </ActiveLink>
           </nav>
           <nav>
-            <ActiveLink activeClassName='active' href='/contact-us'>
-              <a className='nav-link'>contact us</a>
+            <ActiveLink activeClassName='active' href='#contactus'>
+              <a
+                className='nav-link'
+                onClick={() => setOpenContactUsForm(true)}
+              >
+                contact us
+              </a>
             </ActiveLink>
-            <ActiveLink activeClassName='active' href='/signup'>
-              <a className='nav-link'>sign up</a>
+            <ActiveLink activeClassName='active' href='#subscribe'>
+              <a
+                className='nav-link'
+                onClick={() => setOpenSubscriberForm(true)}
+              >
+                Subscribe
+              </a>
             </ActiveLink>
           </nav>
         </div>
       </div>
+      {/**
+       * Subscriber form modal
+       */}
+      <Modal
+        isOpen={openSubscriberForm}
+        onClose={() => setOpenSubscriberForm(false)}
+      >
+        Hello Subscribe to us
+      </Modal>
+      {/**
+       * Contact Us form modal
+       */}
+      <Modal
+        isOpen={openContactUsForm}
+        onClose={() => setOpenContactUsForm(false)}
+      >
+        Hello Contact Us here
+      </Modal>
     </HeaderStyled>
   );
 };
