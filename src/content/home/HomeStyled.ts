@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const HomeStyled = styled.div`
   width: ${props => props.theme.sizes.container()};
   height: 100vh;
+  margin: 0 auto;
 
   display: flex;
   justify-content: center;

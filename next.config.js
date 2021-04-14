@@ -1,5 +1,8 @@
 const withImages = require('next-images');
 
-module.exports = withImages({
-  esModule: true
-});
+module.exports = (phase, { defaultConfig }) => {
+  return withImages({
+    esModule: true,
+    pageExtensions: ['tsx']
+  });
+};
