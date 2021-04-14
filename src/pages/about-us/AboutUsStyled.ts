@@ -8,7 +8,7 @@ const AboutUsStyled = styled.div`
 
   .hero-section {
     min-height: 25rem;
-    background-color: ${props => props.theme.typography.config};
+    background-color: ${props => props.theme.colors.darkerBlue};
     background-image: url('/assets/images/Slider.svg');
     background-size: cover;
     background-position: center;
