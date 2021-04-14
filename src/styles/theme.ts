@@ -1,3 +1,5 @@
+import React from 'react';
+
 const colors = {
   darkerBlue: '#23244b',
   darkBlue: '#00004C',
@@ -187,6 +189,14 @@ const typographyVariant = {
     lineHeight: '16px',
     letterSpacing: '1px'
   }
+};
+
+/**
+ * Fix ME ASAP
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const jsToCss = (style: React.CSSProperties): string => {
+  return '';
 };
 
 const convertPxToRem = (pxSize: number): string => {
