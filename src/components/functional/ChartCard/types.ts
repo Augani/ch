@@ -1,8 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactHTML, ReactHTMLElement, ReactNode } from 'react';
 
 export interface CardProps {
-  className?: string;
-  id?: string;
   cryptoData: Crypto;
 }
 

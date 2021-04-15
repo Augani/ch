@@ -6,6 +6,8 @@ import { isUndefined } from 'lodash';
 import TeamData from './data/team.json';
 import SocialIcon from '@styles/helper/SocialIcon';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
+import CryptoData from './data/Crypto.json';
+import Card from '@components/ChartCard';
 
 const Home: FunctionComponent = () => {
   return (
@@ -32,7 +34,10 @@ const Home: FunctionComponent = () => {
         <section className='main-charts-container'>
           <div className='container'>
             <div className='main-charts'>
-              <div className='main-charts-item'>
+              {CryptoData.map((h, index) => (
+                <Card key={index} cryptoData={h} />
+              ))}
+              {/* <div className='main-charts-item'>
                 <div className='main-charts-title'>
                   <p className='main-charts-name'>BTC/USDT</p>
                   <p className='main-charts-rate'>+0.73%</p>
@@ -79,6 +84,7 @@ const Home: FunctionComponent = () => {
                 <div className='main-charts-volume'>Volume: 12848408.5133</div>
                 <div className='main-charts-plot'></div>
               </div>
+              */}
             </div>
           </div>
         </section>

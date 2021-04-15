@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 import { CardProps } from './types';
 
-const CardStyled = styled.div<CardProps>`
-  width: 20rem;
-  height: 10rem;
+const ChartCardStyles = styled.div<CardProps>`
+  width: 14rem;
+  margin-right: 1rem;
+  height: 8.75rem;
   display: flex;
   flex-direction: column;
   background: ${props => props.theme.colors.darkerBlue};
-  border-radius: 0.4rem;
-  -webkit-box-shadow: ${props => props.theme.shadow.five};
-  -moz-box-shadow: ${props => props.theme.shadow.five};
-  box-shadow: ${props => props.theme.shadow.five};
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 10px 10px 19px -12px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 10px 10px 19px -12px rgba(0, 0, 0, 0.44);
+  box-shadow: 10px 10px 19px -12px rgba(0, 0, 0, 0.44);
 
   .name-holder {
     display: flex;
@@ -26,38 +27,34 @@ const CardStyled = styled.div<CardProps>`
       parseInt(props.cryptoData.change) < 0
         ? props.theme.colors.red
         : props.theme.colors.green};
-    font-size: 0.875rem;
+    font-size: 0.938rem;
     font-weight: 700;
     line-height: 1.375rem;
   }
 
   .crypto-name {
     color: ${props => props.theme.colors.white};
-    font-size: 0.875rem;
+    font-size: 0.938rem;
     font-weight: 700;
-    line-height: 1.375rem;
   }
 
   .crypto-price {
     color: ${props => props.theme.colors.white};
     font-size: 1.25rem;
-    font-weight: 400;
     padding-left: 1rem;
-    line-height: 2.125rem;
-    margin-bottom: 0.2rem;
   }
 
   .crypto-volume {
+    padding-left: 1rem;
     color: ${props => props.theme.colors.white};
     font-size: 0.75rem;
-    font-weight: 400;
-    padding-left: 1rem;
   }
 
   .chart-plot {
     height: 5rem;
-    width: 20rem;
+    width: 14rem;
+    overflow: hidden;
   }
 `;
 
-export default CardStyled;
+export default ChartCardStyles;

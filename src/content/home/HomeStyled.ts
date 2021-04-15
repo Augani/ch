@@ -91,6 +91,7 @@ const HomeStyled = styled.div`
     position: absolute;
     justify-content: space-evenly;
 
+
     .main-charts-item {
       width: 14rem;
       margin-right: 1rem;
