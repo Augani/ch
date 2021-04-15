@@ -191,12 +191,20 @@ const typographyVariant = {
   }
 };
 
-/**
- * Fix ME ASAP
- */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const jsToCss = (style: React.CSSProperties): string => {
-  return '';
+const jsToCss = (styleObject: React.CSSProperties): string => {
+  const cssString: string[] = [];
+
+  for (const [key, value] of Object.entries(styleObject)) {
+    const styleKeyAry = key.match(/[A-Z]+[^A-Z]*|[^A-Z]+/g);
+
+    if (styleKeyAry !== null) {
+      const styleKey = styleKeyAry.join('-').toLowerCase();
+      const styleValue = value;
+      cssString.push(`${styleKey}: ${styleValue};`);
+    }
+  }
+
+  return cssString.join(' ');
 };
 
 const convertPxToRem = (pxSize: number): string => {
@@ -282,7 +290,8 @@ const theme = {
   typography,
   breakPoints,
   sizes,
-  mixins
+  mixins,
+  jsToCss
 };
 
 export default theme;
