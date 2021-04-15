@@ -11,14 +11,8 @@ const Home: React.FC = () => {
   return (
     <Container>
       <Head>
-        <title>Coinhaven - Forgot Password</title>
+        <title>Coinhaven - Login</title>
       </Head>
-      <Header className='header'>
-        <a href='/' className='logo'>
-          <CoinhavenLogo />
-        </a>
-      </Header>
-      <main>
         <div className='form-holder'>
           <h1 className='title'>Login</h1>
           <TabBar
@@ -52,7 +46,6 @@ const Home: React.FC = () => {
             <Button mode='light' disabled={true} size='large' text='log in' />
           </form>
         </div>
-      </main>
     </Container>
   );
 };

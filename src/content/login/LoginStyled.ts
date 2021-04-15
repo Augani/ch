@@ -4,7 +4,6 @@ import Background from '../../assets/authBack.png';
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -37,12 +36,10 @@ export const Container = styled.div`
     transform: matrix(1, 0, 0, -1, 0, 0);
   }
 
-  main {
-    width: 100%;
-    padding-left: 7.5rem;
+  main-page {
+    width: ${props => props.theme.sizes.container()};
     display: flex;
     flex-direction: column;
-
     .form-holder {
       max-width: 28rem;
     }
