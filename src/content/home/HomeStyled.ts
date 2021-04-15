@@ -177,18 +177,11 @@ const HomeStyled = styled.div`
     position: relative;
     line-height: 3.063rem;
     text-align: left;
+    font-family: ${props => props.theme.typography.config.fontFamilyRobotoSlab};
+    ${props => props.theme.mixins.styledStroke}
   }
 
-  .main-services-title::before {
-    content: '';
-    height: 0.188rem;
-    width: 4.563rem;
-    position: absolute;
-    top: 1.738rem;
-    left: -5.5rem;
-    background-clip: border-box;
-    background-image: ${props => props.theme.gradients.lightHorizontal};
-  }
+
 
   .main-services-figures {
     width: 100%;
