@@ -5,6 +5,7 @@ import HomeStyled from '@styles/pages/HomeStyled';
 import { isUndefined } from 'lodash';
 import TeamData from '../data/team.json';
 import SocialIcon from '@styles/helper/SocialIcon';
+import ActiveLink from '@components/utils/ActiveLink/ActiveLink';
 
 const Home: FunctionComponent = () => {
   return (
@@ -13,6 +14,10 @@ const Home: FunctionComponent = () => {
         <title>Coinhaven</title>
       </Head>
       <HomeStyled>
+        <ActiveLink activeClassName='active' href='#header'>
+          <div className='arrow-top'></div>
+        </ActiveLink>
+
         {/* Hero Section */}
         <section className='hero-section'>
           <div className='container'>
@@ -23,61 +28,65 @@ const Home: FunctionComponent = () => {
             <h5>Coming soon</h5>
           </div>
         </section>
-        {/* Charts Section */}
-        <section className='main-charts'>
-          <div className='main-charts-item'>
-            <div className='main-charts-title'>
-              <p className='main-charts-name'>BTC/USDT</p>
-              <p className='main-charts-rate'>+0.73%</p>
+        {/* Charts section */}
+        <section className='main-charts-container'>
+          <div className='container'>
+            <div className='main-charts'>
+              <div className='main-charts-item'>
+                <div className='main-charts-title'>
+                  <p className='main-charts-name'>BTC/USDT</p>
+                  <p className='main-charts-rate'>+0.73%</p>
+                </div>
+                <div className='main-charts-figure'>9441.38</div>
+                <div className='main-charts-volume'>Volume: 28864.479901</div>
+                <div className='main-charts-plot'>
+                  <div className='my_dataviz'></div>
+                </div>
+              </div>
+              <div className='main-charts-item'>
+                <div className='main-charts-title'>
+                  <p className='main-charts-name'>ETH/USDT</p>
+                  <p className='main-charts-rate'>+2.17%</p>
+                </div>
+                <div className='main-charts-figure'>235.57</div>
+                <div className='main-charts-volume'>Volume: 325784.5351</div>
+                <div className='main-charts-plot'></div>
+              </div>
+              <div className='main-charts-item'>
+                <div className='main-charts-title'>
+                  <p className='main-charts-name'>LTC/USDT</p>
+                  <p className='main-charts-rate'>+0.59%</p>
+                </div>
+                <div className='main-charts-figure'>43.62</div>
+                <div className='main-charts-volume'>Volume: 1161419.5017</div>
+                <div className='main-charts-plot'></div>
+              </div>
+              <div className='main-charts-item'>
+                <div className='main-charts-title'>
+                  <p className='main-charts-name'>ADA/USDT</p>
+                  <p className='main-charts-rate charts-neg'>-0.44%</p>
+                </div>
+                <div className='main-charts-figure'>0.7179</div>
+                <div className='main-charts-volume'>Volume: 2568842.90</div>
+                <div className='main-charts-plot'></div>
+              </div>
+              <div className='main-charts-item'>
+                <div className='main-charts-title'>
+                  <p className='main-charts-name'>XRP/USDT</p>
+                  <p className='main-charts-rate'>+0.75%</p>
+                </div>
+                <div className='main-charts-figure'>2.5547</div>
+                <div className='main-charts-volume'>Volume: 12848408.5133</div>
+                <div className='main-charts-plot'></div>
+              </div>
             </div>
-            <div className='main-charts-figure'>9441.38</div>
-            <div className='main-charts-volume'>Volume: 28864.479901</div>
-            <div className='main-charts-plot'>
-              <div className='my_dataviz'></div>
-            </div>
-          </div>
-          <div className='main-charts-item'>
-            <div className='main-charts-title'>
-              <p className='main-charts-name'>ETH/USDT</p>
-              <p className='main-charts-rate'>+2.17%</p>
-            </div>
-            <div className='main-charts-figure'>235.57</div>
-            <div className='main-charts-volume'>Volume: 325784.5351</div>
-            <div className='main-charts-plot'></div>
-          </div>
-          <div className='main-charts-item'>
-            <div className='main-charts-title'>
-              <p className='main-charts-name'>LTC/USDT</p>
-              <p className='main-charts-rate'>+0.59%</p>
-            </div>
-            <div className='main-charts-figure'>43.62</div>
-            <div className='main-charts-volume'>Volume: 1161419.5017</div>
-            <div className='main-charts-plot'></div>
-          </div>
-          <div className='main-charts-item'>
-            <div className='main-charts-title'>
-              <p className='main-charts-name'>ADA/USDT</p>
-              <p className='main-charts-rate charts-neg'>-0.44%</p>
-            </div>
-            <div className='main-charts-figure'>0.7179</div>
-            <div className='main-charts-volume'>Volume: 2568842.90</div>
-            <div className='main-charts-plot'></div>
-          </div>
-          <div className='main-charts-item'>
-            <div className='main-charts-title'>
-              <p className='main-charts-name'>XRP/USDT</p>
-              <p className='main-charts-rate'>+0.75%</p>
-            </div>
-            <div className='main-charts-figure'>2.5547</div>
-            <div className='main-charts-volume'>Volume: 12848408.5133</div>
-            <div className='main-charts-plot'></div>
           </div>
         </section>
 
         {/* Services section */}
 
         <section className='main-services'>
-          <div className='main-services-container'>
+          <div className='container'>
             <h1 className='main-services-title'>Services</h1>
             <div className='main-services-figures'>
               <div className='main-services-tile'>
