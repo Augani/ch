@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IModalStyledProps } from './IModalProps';
+import { IModalStyledProps } from './types';
 
 const ModalStyled = styled.div<IModalStyledProps>`
   width: 100%;

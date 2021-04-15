@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { IModalProps } from './IModalProps';
-import ModalStyled from './ModalStyled';
+import { IModalProps } from './types';
+import ModalStyled from './styles';
 import { CSSTransition } from 'react-transition-group';
 import { isUndefined } from 'lodash';
 

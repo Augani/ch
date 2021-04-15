@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { HeaderStyled } from './HeaderStyled';
 import Link from 'next/link';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
-import Modal from '@ui-base/Modal/Modal';
+import Modal from '@ui-base/Modal';
 import Subscribe from '../SubscriberForm/Subscribe';
 import Contact from '../ContactForm/Contact';
 
