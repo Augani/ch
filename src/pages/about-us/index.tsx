@@ -1,2 +1,2 @@
-import AboutUs from '@content/about-us/index';
+import AboutUs from '@content/about-us';
 export default AboutUs;
