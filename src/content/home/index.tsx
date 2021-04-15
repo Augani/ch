@@ -7,7 +7,7 @@ import TeamData from './data/team.json';
 import SocialIcon from '@styles/helper/SocialIcon';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 import CryptoData from './data/Crypto.json';
-import Card from '@components/ChartCard';
+import Card from '@components/ExchangeRateCard';
 
 const Home: FunctionComponent = () => {
   return (

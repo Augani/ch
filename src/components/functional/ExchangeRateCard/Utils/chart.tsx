@@ -3,7 +3,7 @@
 import React from 'react';
 import * as d3 from 'd3';
 import { useD3 } from './hook';
-import { ChartProps } from '../types';
+import { IChartProps } from '../types';
 
 const renderChart = (svgRef: any, [data, mode]: any) => {
   const margin = { top: 0, right: 0, bottom: 40, left: 0 };
@@ -86,7 +86,7 @@ const renderChart = (svgRef: any, [data, mode]: any) => {
   svg.selectAll('.tick').selectAll('*').remove();
 };
 
-function Chart(props: ChartProps): React.ReactElement {
+const Chart: React.FunctionComponent<IChartProps> = props => {
   const ref = useD3(renderChart, [props.data, props.mode]);
   return (
     <svg
@@ -99,6 +99,6 @@ function Chart(props: ChartProps): React.ReactElement {
       }}
     ></svg>
   );
-}
+};
 
 export default Chart;

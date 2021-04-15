@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
 import { withKnobs, object } from '@storybook/addon-knobs';
-import Card from './index';
+import ExchangeRateCard from './index';
 
 export default {
-  component: Card,
+  component: ExchangeRateCard,
   decorators: [withKnobs],
-  title: 'Functional/Card'
+  title: 'Functional/ExchangeRateCard'
 };
 
-export const ChartCard = () => {
+export const Card = () => {
   const data = object('Data passed', {
     name: 'IDR',
     price: 7.2,
@@ -54,5 +54,5 @@ export const ChartCard = () => {
       }
     ]
   });
-  return <Card cryptoData={data} />;
+  return <ExchangeRateCard cryptoData={data} />;
 };

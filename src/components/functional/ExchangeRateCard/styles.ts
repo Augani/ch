@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { CardProps } from './types';
+import { IExchangeRateCardProps } from './types';
 
-const ChartCardStyles = styled.div<CardProps>`
+const ChartCardStyles = styled.div<IExchangeRateCardProps>`
   width: 14rem;
   margin-right: 1rem;
   height: 8.75rem;

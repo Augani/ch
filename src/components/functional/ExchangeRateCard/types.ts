@@ -1,15 +1,15 @@
-import { ReactHTML, ReactHTMLElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-export interface CardProps {
-  cryptoData: Crypto;
+export interface IExchangeRateCardProps {
+  cryptoData: ICrypto;
 }
 
-export interface DataType {
+export interface ICryptoHistoryItem {
   date: string;
   value: string;
 }
 
-export interface Crypto {
+export interface ICrypto {
   /** the name of the crypto being passed to the component */
   name: string;
   /** the volume of crypto traded */
@@ -19,11 +19,11 @@ export interface Crypto {
   /** the percentage change in the price */
   change: string;
   /** a history of cyrpto data for a particular period */
-  history?: DataType[] | undefined;
+  history?: ICryptoHistoryItem[];
 }
 
-export interface ChartProps {
-  data: DataType[] | undefined;
+export interface IChartProps {
+  data: ICryptoHistoryItem[] | undefined;
   mode: string;
   children?: ReactNode;
 }
