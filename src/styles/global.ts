@@ -86,5 +86,4 @@ export default createGlobalStyle`
     line-height: 2;
     white-space: pre-wrap;
   }
-
 `;

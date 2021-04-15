@@ -1,0 +1,26 @@
+[
+    {
+        "title": "SECURITY",
+        "summery": "Sleep soundly with your assets safely stored in bulletproof cold storage",
+        "image": {
+            "url": "/assets/icons/security.svg",
+            "alt": "security icon"
+        }
+    },
+    {
+        "title": "LIQUIDITY",
+        "summery": "Buy, sell and swap between 9+ cryptocurrencies quickly and easily.",
+        "image": {
+            "url": "/assets/icons/liquidity.svg",
+            "alt": "liquidity icon"
+        }
+    },
+    {
+        "title": "LOW FEES",
+        "summery": "Save money with low exchange fees and withdrawal commissions.",
+        "image": {
+            "url": "/assets/icons/fees.svg",
+            "alt": "fees icon"
+        }
+    }
+]

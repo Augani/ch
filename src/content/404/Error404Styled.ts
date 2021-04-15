@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const HomeStyled = styled.div`
-  width: ${props => props.theme.sizes.container()};
+const Error404Styled = styled.div`
+  width: 100vw;
   height: 100vh;
 
   display: flex;
@@ -22,4 +22,4 @@ const HomeStyled = styled.div`
   }
 `;
 
-export default HomeStyled;
+export default Error404Styled;

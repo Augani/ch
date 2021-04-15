@@ -3,7 +3,7 @@ import { FooterStyled, CountryFlag, Copyright } from './FooterStyled';
 import SocialIcon from '@styles/helper/SocialIcon';
 
 import Link from 'next/link';
-import ActiveLink from '@utils/ActiveLink';
+import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 
 const Header: FunctionComponent = () => {
   return (
@@ -33,7 +33,7 @@ const Header: FunctionComponent = () => {
             <div className='logo'>
               <Link href='/'>
                 <a>
-                  <img src='/assets/logos/bright.png' alt='Coinhaven Logo' />
+                  <img src='/assets/logos/light.png' alt='Coinhaven Logo' />
                 </a>
               </Link>
             </div>
