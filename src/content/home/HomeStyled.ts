@@ -124,6 +124,7 @@ const HomeStyled = styled.div`
     .main-charts-rate.charts-neg {
       color: ${props => props.theme.colors.red};
     }
+  
 
     .main-charts-volume {
       padding-left: 1rem;

@@ -3,7 +3,7 @@ import { FooterStyled, CountryFlag, Copyright } from './FooterStyled';
 import SocialIcon from '@styles/helper/SocialIcon';
 
 import Link from 'next/link';
-import ActiveLink from '@components/utils/ActiveLink/ActiveLink';
+import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 
 const Header: FunctionComponent = () => {
   return (
