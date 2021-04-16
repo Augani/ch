@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 
 const HomeStyled = styled.div`
-  .arrow-top {
-    height: 3.5rem;
-    width: 3.769rem;
-    position: fixed;
-    z-index: 50;
-    cursor: pointer;
-    top: 37.75rem;
-    right: 3.543rem;
-    background-image: url('/assets/images/PolygonArrow.svg');
-  }
+  
   .container {
     width: ${props => props.theme.sizes.container()};
     margin: 0 auto;

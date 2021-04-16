@@ -18,10 +18,6 @@ const Home: FunctionComponent = () => {
         <title>Coinhaven</title>
       </Head>
       <HomeStyled>
-        <ActiveLink activeClassName='active' href='#header'>
-          <div className='arrow-top'></div>
-        </ActiveLink>
-
         {/* Hero Section */}
         <section className='hero-section'>
           <div className='container'>
