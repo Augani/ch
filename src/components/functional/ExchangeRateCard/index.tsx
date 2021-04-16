@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Chart from './Utils/chart';
 import { IExchangeRateCardProps } from './types';
-import ChartCardStyles from './styles';
+import ExchangeRateCardStyled from './styles';
 
 const ExhangeRateCard: React.FunctionComponent<IExchangeRateCardProps> = props => {
   const { cryptoData } = props;
   return (
-    <ChartCardStyles cryptoData={cryptoData}>
+    <ExchangeRateCardStyled cryptoData={cryptoData}>
       <div className='name-holder'>
         <div className='crypto-name'>{cryptoData.name}</div>
         <div className='change-rate' data-testid='rate'>
@@ -18,7 +18,7 @@ const ExhangeRateCard: React.FunctionComponent<IExchangeRateCardProps> = props =
       <div className='chart-plot'>
         <Chart data={cryptoData.history} mode={cryptoData.change} />
       </div>
-    </ChartCardStyles>
+    </ExchangeRateCardStyled>
   );
 };
 
