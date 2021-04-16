@@ -1,0 +1,54 @@
+default:
+  image: docker:latest
+
+stages:
+  - build
+  - push
+  - deploy
+
+variables:
+  IMAGE_NAME: "landing-page-img"
+  CONTAINER_NAME: "landing-page"
+  HOST_PORT: "3000"
+  CONTAINER_PORT: "3000"
+
+
+before_script:
+  - docker login https://${REGISTRY_URL} -u ${REGISTRY_USER} -p ${REGISTRY_PASSWORD}
+
+
+build-job:
+  image: docker:latest
+  stage: build
+  script:
+    - echo "Creating custom Docker image!"
+    - docker build -t ${CI_PROJECT_NAME}:${CI_COMMIT_REF_SLUG} -f Dockerfile .
+  after_script:
+    - docker save -o ${CI_PROJECT_NAME}-${CI_COMMIT_REF_SLUG}.tar ${CI_PROJECT_NAME}:${CI_COMMIT_REF_SLUG}
+  artifacts:
+    name: "docker-image-$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG"
+    paths:
+      - ${CI_PROJECT_NAME}-${CI_COMMIT_REF_SLUG}.tar
+    expire_in: 1 week
+
+push-job:
+  image: docker:latest
+  stage: push
+  script:
+    - echo "Pushing custom docker image to private docker registry!"
+    - docker load --input ${CI_PROJECT_NAME}-${CI_COMMIT_REF_SLUG}.tar
+    - docker tag ${CI_PROJECT_NAME}:${CI_COMMIT_REF_SLUG} ${REGISTRY_URL}/${IMAGE_NAME}:${CI_COMMIT_REF_SLUG}
+  after_script:
+    - docker push ${REGISTRY_URL}/${IMAGE_NAME}:${CI_COMMIT_REF_SLUG}
+
+
+deploy-stage:
+  image: docker:latest
+  stage: deploy
+  tags:
+    - test-stage-runner
+  script:
+    - echo "pulling custom docker image from private registry!"
+    - docker pull ${REGISTRY_URL}/${IMAGE_NAME}:${CI_COMMIT_REF_SLUG}
+    - docker rm -f ${CONTAINER_NAME}
+    - docker run -d --publish $HOST_PORT:$CONTAINER_PORT --name ${CONTAINER_NAME} ${REGISTRY_URL}/${IMAGE_NAME}:${CI_COMMIT_REF_SLUG}
