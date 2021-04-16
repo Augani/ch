@@ -8,6 +8,8 @@ import SocialIcon from '@styles/helper/SocialIcon';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 import CryptoData from './data/Crypto.json';
 import Card from '@components/ExchangeRateCard';
+import ChartSVG from '../../../public/assets/images/Chart.svg';
+import BankSVG from '../../../public/assets/images/Bank.svg';
 
 const Home: FunctionComponent = () => {
   return (
@@ -37,54 +39,6 @@ const Home: FunctionComponent = () => {
               {CryptoData.map((h, index) => (
                 <Card key={index} cryptoData={h} />
               ))}
-              {/* <div className='main-charts-item'>
-                <div className='main-charts-title'>
-                  <p className='main-charts-name'>BTC/USDT</p>
-                  <p className='main-charts-rate'>+0.73%</p>
-                </div>
-                <div className='main-charts-figure'>9441.38</div>
-                <div className='main-charts-volume'>Volume: 28864.479901</div>
-                <div className='main-charts-plot'>
-                  <div className='my_dataviz'></div>
-                </div>
-              </div>
-              <div className='main-charts-item'>
-                <div className='main-charts-title'>
-                  <p className='main-charts-name'>ETH/USDT</p>
-                  <p className='main-charts-rate'>+2.17%</p>
-                </div>
-                <div className='main-charts-figure'>235.57</div>
-                <div className='main-charts-volume'>Volume: 325784.5351</div>
-                <div className='main-charts-plot'></div>
-              </div>
-              <div className='main-charts-item'>
-                <div className='main-charts-title'>
-                  <p className='main-charts-name'>LTC/USDT</p>
-                  <p className='main-charts-rate'>+0.59%</p>
-                </div>
-                <div className='main-charts-figure'>43.62</div>
-                <div className='main-charts-volume'>Volume: 1161419.5017</div>
-                <div className='main-charts-plot'></div>
-              </div>
-              <div className='main-charts-item'>
-                <div className='main-charts-title'>
-                  <p className='main-charts-name'>ADA/USDT</p>
-                  <p className='main-charts-rate charts-neg'>-0.44%</p>
-                </div>
-                <div className='main-charts-figure'>0.7179</div>
-                <div className='main-charts-volume'>Volume: 2568842.90</div>
-                <div className='main-charts-plot'></div>
-              </div>
-              <div className='main-charts-item'>
-                <div className='main-charts-title'>
-                  <p className='main-charts-name'>XRP/USDT</p>
-                  <p className='main-charts-rate'>+0.75%</p>
-                </div>
-                <div className='main-charts-figure'>2.5547</div>
-                <div className='main-charts-volume'>Volume: 12848408.5133</div>
-                <div className='main-charts-plot'></div>
-              </div>
-              */}
             </div>
           </div>
         </section>
@@ -130,11 +84,7 @@ const Home: FunctionComponent = () => {
               <div className='main-services-tile'>
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <img
-                      alt='bank'
-                      className=''
-                      src='./assets/images/bank.svg'
-                    />
+                    <BankSVG />
                   </div>
                 </div>
 
@@ -148,11 +98,7 @@ const Home: FunctionComponent = () => {
 
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <img
-                      alt='bank'
-                      className=''
-                      src='./assets/images/wallet.svg'
-                    />
+                    <img alt='Wallet' src='/assets/images/G-Wallet.png' />
                   </div>
                 </div>
               </div>
@@ -160,11 +106,7 @@ const Home: FunctionComponent = () => {
               <div className='main-services-tile'>
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <img
-                      alt='bank'
-                      className=''
-                      src='./assets/images/chart.svg'
-                    />
+                    <ChartSVG />
                   </div>
                 </div>
 

@@ -34,8 +34,7 @@ const HomeStyled = styled.div`
       bottom: 8rem;
       z-index: -1;
       right: -5%;
-      left: -%;
-      height: 120px;
+      height: 7.5rem;
       background: ${props => props.theme.colors.darkerBlue};
       -webkit-clip-path: ellipse(50% 40% at 49% 56%);
       clip-path: ellipse(50% 40% at 49% 56%);
@@ -142,7 +141,7 @@ const HomeStyled = styled.div`
       justify-content: space-between;
     }
   }
-}
+
 
 .main-services {
   width: 100%;
@@ -267,7 +266,7 @@ const HomeStyled = styled.div`
     position: absolute;
   }
   .main-services-tile:nth-of-type(2) > .main-services-figures-title::after {
-    content: 'Get your personal coinhaven bank account + a debit card';
+    content: 'Get your personalized IBAN wallet + a Debit card';
     font-size: 1.125rem;
     bottom: -3rem;
     font-weight: 400;
@@ -316,13 +315,17 @@ const HomeStyled = styled.div`
     border-top: 0.1rem solid ${props => props.theme.colors.purple};
     border-left: ${props => props.theme.colors.purple} 0.1rem solid;
     border-bottom: ${props => props.theme.colors.purple} 0.1rem solid;
+    background: linear-gradient(92.63deg, rgba(206, 242, 255, 0.5) -0.56%, rgba(208, 227, 255, 0) 76.39%);
+
   }
   .main-services-tile:nth-of-type(2) {
     border-right: ${props => props.theme.colors.purple} 0.1rem solid;
+    background: linear-gradient(-138deg,rgba(206, 242, 255, 0.5) 9.61%,rgba(208,227,255,0) 45.96% );
   }
 
   .main-services-tile:nth-of-type(4) {
     border-right: ${props => props.theme.colors.purple} 0.1rem solid;
+    background: linear-gradient(50.45deg, rgba(151, 204, 252, 0) 60%, #74BBFC 280.42%);
   }
 
   .main-services-figures-image {
@@ -584,75 +587,73 @@ const HomeStyled = styled.div`
     }
   }
 }
-.roadmap-section {
-  padding: 1.875rem 0;
-  min-height: 46.625rem;
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(-138deg,#cedcff 9.61%,rgba(208,227,255,0) 45.96% );
 
-  h2{
-    ${props => props.theme.mixins.styledStroke}
-
-    font-weight: ${props => props.theme.typography.config.fontWeightBold};
-    line-height: 3.75rem;
-    letter-spacing: -0.5px;
-    font-size: 2.5rem;
-    font-family: ${props => props.theme.typography.config.fontFamilyOpenSans};
-    color: ${props => props.theme.colors.darkBlue};
-    padding-bottom: 2.75rem;
-  }
-
-  .roadmap-details{
-    min-height: 29.9375rem;
-    width: calc(100% - 11.0625rem);
-    margin: 0 auto;
-    background-image: url(/assets/images/roadmap.svg);
-    background-position: top left;
-    background-repeat: no-repeat;
+  .roadmap-section {
+    padding: 1.875rem 0;
+    min-height: 46.625rem;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
+    background: linear-gradient(-138deg,#cedcff 9.61%,rgba(208,227,255,0) 45.96% );
 
-    .roadmap-item{
-      flex: 1;
-      min-width: 12.875rem;
-      margin-left: 0.375rem;
-      min-width: 206px;
-      display: flex;
-      flex-direction: column;
+    h2{
+      ${props => props.theme.mixins.styledStroke}
 
-      &:nth-child(even){
-        justify-content: flex-end;
-      }
-
-      .roadmap-content{
-
-        padding-left: 1.375rem;
-        margin-top: -0.9375rem;
-
-        h4{
-          ${props => props.theme.jsToCss(props.theme.typography.variant.h4)};
-          margin: 0;
-          text-transform: capitalize;
-          letter-spacing: -0.6px;
-        }
-        h6{
-          ${props => props.theme.jsToCss(props.theme.typography.variant.h6)};
-          letter-spacing: 0.25px;
-          margin: 0;
-          text-transform: capitalize;
-        }
-        p{
-          ${props => props.theme.jsToCss(props.theme.typography.variant.body1)};
-        }
-      }
-
+      font-weight: ${props => props.theme.typography.config.fontWeightBold};
+      line-height: 3.75rem;
+      letter-spacing: -0.5px;
+      font-size: 2.5rem;
+      font-family: ${props => props.theme.typography.config.fontFamilyOpenSans};
+      color: ${props => props.theme.colors.darkBlue};
+      padding-bottom: 2.75rem;
     }
 
-  }
+    .roadmap-details{
+      min-height: 29.9375rem;
+      width: calc(100% - 11.0625rem);
+      margin: 0 auto;
+      background-image: url(/assets/images/roadmap.svg);
+      background-position: top left;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
 
-}
+      .roadmap-item{
+        flex: 1;
+        min-width: 12.875rem;
+        margin-left: 0.375rem;
+        min-width: 206px;
+        display: flex;
+        flex-direction: column;
+
+        &:nth-child(even){
+          justify-content: flex-end;
+        }
+
+        .roadmap-content{
+          padding-left: 1.375rem;
+          margin-top: -0.9375rem;
+
+          h4{
+            ${props => props.theme.jsToCss(props.theme.typography.variant.h4)};
+            margin: 0;
+            text-transform: capitalize;
+            letter-spacing: -0.6px;
+          }
+          h6{
+            ${props => props.theme.jsToCss(props.theme.typography.variant.h6)};
+            letter-spacing: 0.25px;
+            margin: 0;
+            text-transform: capitalize;
+          }
+          p{
+            ${props =>
+              props.theme.jsToCss(props.theme.typography.variant.body1)};
+          }
+        }
+      }
+    }
+  }
 }
 
 
