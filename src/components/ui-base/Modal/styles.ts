@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { IModalStyledProps } from './IModalProps';
+import { IModalStyledProps } from './types';
 
-const ModalStyled = styled.div<IModalStyledProps>`
+const ModalStyles = styled.div<IModalStyledProps>`
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,4 +49,4 @@ const ModalStyled = styled.div<IModalStyledProps>`
   }
 `;
 
-export default ModalStyled;
+export default ModalStyles;
