@@ -4,10 +4,12 @@ import SocialIcon from '@styles/helper/SocialIcon';
 
 import Link from 'next/link';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
+import ScrollTop from '../ScrollTop';
 
 const Header: FunctionComponent = () => {
   return (
     <FooterStyled className='footer'>
+      <ScrollTop />
       <footer className='footer'>
         <div className='container'>
           <div className='location-change'>
