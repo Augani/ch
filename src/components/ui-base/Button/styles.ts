@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IButtonProps } from './IButtonProps';
+import { IButtonProps } from './type';
 
 export const ButtonStyled = styled.button<IButtonProps>`
   display: flex;

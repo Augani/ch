@@ -1,7 +1,18 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { Button } from './Button';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import { Button } from './Index';
+
+const buttonSizes = {
+  small: 'small',
+  medium: 'medium',
+  large: 'large'
+};
+
+const buttonModes = {
+  light: 'light',
+  dark: 'dark'
+};
 
 export default {
   component: Button,
@@ -9,41 +20,11 @@ export default {
   title: 'UI Base/Button'
 };
 
-export const SmallButton = () => {
+export const componentButton = () => {
   const knobProps = {
-    size: 'small',
-    text: 'small',
-    mode: 'dark'
-  };
-
-  return <Button {...knobProps} />;
-};
-
-export const MediumButton = () => {
-  const knobProps = {
-    size: 'normal',
-    text: 'Medium',
-    mode: 'dark'
-  };
-
-  return <Button {...knobProps} />;
-};
-
-export const LargeButton = () => {
-  const knobProps = {
-    size: 'large',
-    text: 'Large',
-    mode: 'dark'
-  };
-
-  return <Button disabled={true} {...knobProps} />;
-};
-
-export const LightLargeButton = () => {
-  const knobProps = {
-    size: 'large',
-    text: 'Large',
-    mode: 'light'
+    size: select('Size', buttonSizes, buttonSizes.small),
+    text: text('Text', 'Login'),
+    mode: select('Mode', buttonModes, buttonModes.light)
   };
 
   return <Button {...knobProps} />;

@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement } from 'react';
-import { IButtonProps } from './IButtonProps';
-import { ButtonStyled } from './Styled';
+import { IButtonProps } from './type';
+import { ButtonStyled } from './styles';
 
 export const Button: FunctionComponent<IButtonProps> = props => {
   const { text, size, mode, children, ...rest } = props;
