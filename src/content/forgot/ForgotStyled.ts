@@ -1,6 +1,5 @@
 import { ReactSVG } from 'react';
 import styled from 'styled-components';
-import Background from '../../assets/authBack.png';
 
 export const Container = styled.div`
   width: 100vw;
@@ -8,10 +7,19 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-top: 12.5rem;
+  align-items: center;
   background-position: 90% 45%;
-  background-image: url('${Background}');
+  background-image: url('/assets/images/authBack.png');
   background-repeat: no-repeat;
   background-size: 40%;
+
+  .signup-btn {
+    position: absolute;
+    top: 2rem;
+    z-index: 100;
+    right: 2.5rem;
+  }
 
   .header {
     display: flex;
@@ -30,6 +38,7 @@ export const Container = styled.div`
     content: '';
     position: absolute;
     width: 100%;
+    top: 0;
     height: 100%;
     z-index: -1;
     background: ${props => props.theme.gradients.lightDiagonal};
@@ -38,8 +47,7 @@ export const Container = styled.div`
   }
 
   main {
-    width: 100%;
-    padding-left: 7.5rem;
+    width: ${props => props.theme.sizes.container()};
     display: flex;
     flex-direction: column;
 

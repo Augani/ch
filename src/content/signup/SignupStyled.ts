@@ -1,6 +1,5 @@
 import { ReactSVG } from 'react';
 import styled from 'styled-components';
-import Background from '../../assets/authBack.png';
 
 export const Container = styled.div`
   width: 100vw;
@@ -8,8 +7,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  justify-content: center;
+  align-items: center;
   background-position: 90% 45%;
-  background-image: url('${Background}');
+  background-image: url('/assets/images/authBack.png');
   background-repeat: no-repeat;
   background-size: 40%;
 
@@ -38,8 +39,7 @@ export const Container = styled.div`
   }
 
   main {
-    width: 100%;
-    padding-left: 7.5rem;
+    width: ${props => props.theme.sizes.container()};
     display: flex;
     flex-direction: column;
 

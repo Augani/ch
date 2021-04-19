@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const FooterStyled = styled.footer`
   background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 
   .container {
     width: ${props => props.theme.sizes.container()};
