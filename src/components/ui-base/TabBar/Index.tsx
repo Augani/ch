@@ -1,10 +1,10 @@
 import React, { FunctionComponent, ReactElement } from 'react';
-import { ITabBarProps } from './ITabBarProps';
-import { TabBarStyled } from './Styled';
+import { ITabBarProps } from './type';
+import { TabBarStyled } from './styles';
 
 export const TabBar: FunctionComponent<ITabBarProps> = props => {
-  const { tabs, size, children, ...rest } = props;
-  const [active, setActive] = React.useState(0);
+  const { tabs, size, children, activeTab = 0, ...rest } = props;
+  const [active, setActive] = React.useState(activeTab);
   return (
     <TabBarStyled size={size} {...rest}>
       {tabs &&

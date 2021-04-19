@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ITabBarProps } from './ITabBarProps';
+import { ITabBarProps } from './type';
 
 export const TabBarStyled = styled.div<ITabBarProps>`
   display: flex;

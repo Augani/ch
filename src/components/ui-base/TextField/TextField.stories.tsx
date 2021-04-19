@@ -1,38 +1,27 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { TextField } from './TextField';
+import { text, withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { TextField as XTextField } from './Index';
 
 export default {
-  component: TextField,
+  component: XTextField,
   decorators: [withKnobs],
-  title: 'UI Base/TextField'
+  title: 'UI Base/FormElements'
 };
 
-export const SmallTextField = () => {
-  const knobProps = {
-    inputSize: 'small',
-    label: 'Username'
-  };
-
-  return <TextField {...knobProps} />;
+const Sizes = {
+  small: 'small',
+  large: 'large'
 };
 
-export const NormalTextField = () => {
+export const TextField = () => {
   const knobProps = {
-    inputSize: 'normal',
-    label: 'Username'
+    inputSize: select('Sizes', Sizes, Sizes.small),
+    label: text('Label', 'Username'),
+    placeholder: text('Placeholder', 'Your username'),
+    error: boolean('Error', false),
+    errorText: text('Text to show on error', 'Wrong email')
   };
 
-  return <TextField {...knobProps} />;
-};
-
-export const ErrorTextField = () => {
-  const knobProps = {
-    inputSize: 'normal',
-    label: 'Username',
-    error: true
-  };
-
-  return <TextField {...knobProps} />;
+  return <XTextField {...knobProps} />;
 };
