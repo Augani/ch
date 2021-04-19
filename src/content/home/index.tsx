@@ -7,7 +7,6 @@ import TeamData from './data/team.json';
 import SocialIcon from '@styles/helper/SocialIcon';
 import CryptoData from './data/Crypto.json';
 import Card from '@components/ExchangeRateCard';
-import BankSVG from '../../../public/assets/images/bank.svg';
 
 const Home: FunctionComponent = () => {
   return (
@@ -85,7 +84,7 @@ const Home: FunctionComponent = () => {
               <div className='main-services-tile'>
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <BankSVG />
+                    <img alt='Wallet' src='/assets/images/bank.svg' />
                   </div>
                 </div>
 

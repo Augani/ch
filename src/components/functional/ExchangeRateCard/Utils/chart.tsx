@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import * as d3 from 'd3';
 import { useD3 } from './useD3';
 import { IChartProps } from '../types';
 import RenderChart from './d3';
