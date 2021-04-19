@@ -143,7 +143,7 @@ const HomeStyled = styled.div`
   align-items: center;
   background-image: url('/assets/images/polygon4.png');
   background-repeat: no-repeat;
-  background-position: left 75%;
+  background-position: -4rem 30rem;
 
   .main-services-container {
     width: 70%;
@@ -240,6 +240,7 @@ const HomeStyled = styled.div`
     max-width: 20.125rem;
     font-weight: 400;
     text-align: left;
+    line-height: 1.5rem;
     margin: 0;
     color: ${props => props.theme.colors.purple};
 
@@ -305,10 +306,14 @@ const HomeStyled = styled.div`
 
   .f-form-formgroup {
     margin-bottom: 2rem;
+    background: transparent;
   }
 
   .f-form-label {
     font-size: 1.1rem;
+    opacity: 0.3;
+    line-height: 1.5rem;
+    color: ${props => props.theme.colors.darkBlue};
     opacity: 0.3;
   }
 
@@ -318,14 +323,16 @@ const HomeStyled = styled.div`
     justify-content: center;
     height: 3rem;
     width: 19.688rem;
-    border-radius: 10px;
-    background-color: ${props => props.theme.colors.white};
+    border-radius: 0.25rem;
+    background-color: white;
+
   }
 
   .f-form-input {
     font-size: 1rem;
     padding-left: 1.313em;
     padding-right: 0.2em;
+    background: transparent;
     color: ${props => props.theme.colors.darkBlue};
   }
 
@@ -342,21 +349,34 @@ const HomeStyled = styled.div`
   }
 
   .f-form-line {
-    width: 0.02rem;
-    height: 60%;
+    width: 0.005rem;
+    height: 70%;
   }
 
   .f-form-submit {
+    ${props => props.theme.typography.variant.button};
     height: 2.7rem;
-    width: 60%;
+    width: 14.5rem;
     outline: none;
     border: none;
     text-transform: uppercase;
     box-shadow: ${props => props.theme.shadow.five};
     background: ${props => props.theme.colors.lightBlue};
+    box-shadow: 0px 4px 16px rgba(78, 81, 255, 0.32);
+    letter-spacing: 0.05em;
     border-radius: 0.25rem;
+    text-transform: uppercase;
+    line-height: 2.125rem;
     color: ${props => props.theme.colors.white};
   }
+}
+
+.competitive-cover {
+  background-image: url('/assets/images/polygon.svg');
+  background-position: 98% 1.5rem;
+  background-repeat: no-repeat;
+  padding-top: 2.938rem;
+  margin-top: 1rem;
 }
 
 .competitive-advantage-section {

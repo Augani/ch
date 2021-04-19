@@ -135,7 +135,8 @@ const Home: FunctionComponent = () => {
         </section>
 
         {/* Competitive advantage section */}
-        <section className='competitive-advantage-section'>
+         <div className='competitive-cover'>
+         <section className='competitive-advantage-section'>
           <div className='container'>
             <h3 className='styled-stroke'>Competitive advantage</h3>
 
@@ -173,6 +174,7 @@ const Home: FunctionComponent = () => {
           </div>
         </section>
 
+           </div>
         {/* Roadmap section */}
         <section className='roadmap-section'>
           <div className='container'>
