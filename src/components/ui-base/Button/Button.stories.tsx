@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import { Button } from './Index';
+import { Button as XButton } from './Index';
 
 const buttonSizes = {
   small: 'small',
@@ -15,17 +15,17 @@ const buttonModes = {
 };
 
 export default {
-  component: Button,
+  component: XButton,
   decorators: [withKnobs],
-  title: 'UI Base/Button'
+  title: 'UI Base/FormElements'
 };
 
-export const componentButton = () => {
+export const Button = () => {
   const knobProps = {
     size: select('Size', buttonSizes, buttonSizes.small),
     text: text('Text', 'Login'),
     mode: select('Mode', buttonModes, buttonModes.light)
   };
 
-  return <Button {...knobProps} />;
+  return <XButton {...knobProps} />;
 };
