@@ -38,12 +38,12 @@ export const TextFieldStyled = styled.div<ITextFieldProps>`
 
   .error-field {
     display: flex;
+    margin-top: 0.25rem;
     align-items: center;
     max-width: ${props => (props.inputSize === 'small' ? '8rem' : '16rem')};
   }
 
   .error-field small {
-    margin-top: 0.25rem;
     margin-left: 0.25rem;
     color: ${props => props.theme.colors.red};
     font-size: 0.75rem;
