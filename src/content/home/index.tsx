@@ -8,8 +8,7 @@ import SocialIcon from '@styles/helper/SocialIcon';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 import CryptoData from './data/Crypto.json';
 import Card from '@components/ExchangeRateCard';
-import ChartSVG from '../../../public/assets/images/Chart.svg';
-import BankSVG from '../../../public/assets/images/Bank.svg';
+import BankSVG from '../../../public/assets/images/bank.svg';
 
 const Home: FunctionComponent = () => {
   return (
@@ -46,7 +45,14 @@ const Home: FunctionComponent = () => {
             <h1 className='main-services-title'>Services</h1>
             <div className='main-services-figures'>
               <div className='main-services-tile'>
-                <h3 className='main-services-figures-title'>Crypto exchange</h3>
+                <div className='main-services-figures-text'>
+                  <h3 className='main-services-figures-title'>
+                    Crypto exchange
+                  </h3>
+                  <p className='main-services-figures-sub'>
+                    Trade and swap crypto assets with ease.
+                  </p>
+                </div>
 
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
@@ -84,17 +90,28 @@ const Home: FunctionComponent = () => {
                   </div>
                 </div>
 
-                <h3 className='main-services-figures-title'>
-                  EURO wallet and <br></br> debit card
-                </h3>
+                <div className='main-services-figures-text'>
+                  <h3 className='main-services-figures-title'>
+                    EURO wallet and <br></br> debit card
+                  </h3>
+                  <p className='main-services-figures-sub'>
+                    Get your personalized IBAN wallet + a Debit card.
+                  </p>
+                </div>
               </div>
 
               <div className='main-services-tile'>
-                <h1 className='main-services-figures-title'>Wallets</h1>
+                <div className='main-services-figures-text'>
+                  <h3 className='main-services-figures-title'>Wallets</h3>
+                  <p className='main-services-figures-sub'>
+                    Operate your very own Coinhaven FIAT and cryptocurrency
+                    wallets.
+                  </p>
+                </div>
 
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <img alt='Wallet' src='/assets/images/G-Wallet.png' />
+                    <img alt='Wallet' src='/assets/images/g-wallet.png' />
                   </div>
                 </div>
               </div>
@@ -102,13 +119,18 @@ const Home: FunctionComponent = () => {
               <div className='main-services-tile'>
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <ChartSVG />
+                    <img alt='Chart' src='/assets/images/chart.png' />
                   </div>
                 </div>
 
-                <h1 className='main-services-figures-title'>
-                  OTC brokerage <br></br> interface
-                </h1>
+                <div className='main-services-figures-text'>
+                  <h3 className='main-services-figures-title'>
+                    OTC brokerage <br></br> interface
+                  </h3>
+                  <p className='main-services-figures-sub'>
+                    Buy crypto over-the-counter minus the high brokerage fees.{' '}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

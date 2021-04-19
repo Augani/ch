@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HomeStyled = styled.div`
-  
+
   .container {
     width: ${props => props.theme.sizes.container()};
     margin: 0 auto;
@@ -10,7 +10,7 @@ const HomeStyled = styled.div`
   .hero-section {
     min-height: 45rem;
     background-color: ${props => props.theme.colors.darkerBlue};
-    background-image: url('/assets/images/HomeBack.svg');
+    background-image: url('/assets/images/homeBack.svg');
     background-position: right;
     background-repeat: no-repeat;
     margin-top: -4.6875rem;
@@ -141,7 +141,7 @@ const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('/assets/images/Polygon4.png');
+  background-image: url('/assets/images/polygon4.png');
   background-repeat: no-repeat;
   background-position: left 75%;
 
@@ -172,8 +172,6 @@ const HomeStyled = styled.div`
     ${props => props.theme.mixins.styledStroke}
   }
 
-
-
   .main-services-figures {
     width: 100%;
     max-width: 100%;
@@ -189,93 +187,62 @@ const HomeStyled = styled.div`
     grid-template-rows: 1fr;
     grid-template-areas: '. .';
     place-items: center;
-    height: 20rem;
+    min-height: 17rem;
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
   .main-services-tile:first-of-type {
-    height: 30rem;
+    padding-bottom: 2.313rem;
   }
 
   .main-services-figures-title {
-    position: relative;
-    color: var(--dark-blue);
+    color: ${props => props.theme.colors.darkerBlue};
     position: relative;
     font-weight: 600;
     font-size: 2.25rem;
     text-align: left;
-  }
-
-  .main-services-tile:nth-of-type(3)
-    > .main-services-figures-title:first-of-type::after {
-    content: 'Operate your very own coinhaven FIAT and cryptocurrency wallets';
-    font-size: 1.125rem;
-    bottom: -3rem;
-    font-weight: 400;
-    text-align: left;
-    color: ${props => props.theme.colors.purple};
-    left: 0;
-    position: absolute;
-  }
-
-  .main-services-tile:nth-of-type(4)
-    > .main-services-figures-title:first-of-type::after {
-    content: 'Buy crypto over-the-counter minus the high brokerage fees';
-    font-size: 1.125rem;
-    bottom: -3rem;
-    font-weight: 400;
-    text-align: left;
-    color: ${props => props.theme.colors.purple};
-    left: 0;
-    position: absolute;
+    margin: 0;
+    margin-bottom: 1rem;
+    line-height: 3.064rem;
   }
 
   .main-services-tile:first-of-type::before {
     content: '';
-    width: 0.1rem;
-    background-color: ${props => props.theme.colors.purple};
+    width: 0.15rem;
+    background: rgba(116, 187, 252, 1);
     height: 60%;
     bottom: 0;
     left: 0;
     position: absolute;
   }
 
-  .main-services-tile:first-of-type {
-    border-bottom: ${props => props.theme.colors.purple} 0.1rem solid;
+  .main-services-tile:nth-of-type(2) {
+    border-right: rgba(116, 187, 252, 0.6) solid 0.2rem;
+    border-bottom: rgba(116, 187, 252, 0.5) solid 0.2rem;
+    border-top: rgba(116, 187, 252, 0.7) solid 0.2rem;
   }
 
-  .main-services-tile:nth-of-type(1) > .main-services-figures-title::after {
-    content: 'Trade and swap crypto assets with ease';
-    font-size: 1.125rem;
-    bottom: -3rem;
-    width: 17.83rem;
-    font-weight: 400;
-    text-align: left;
-    color: ${props => props.theme.colors.purple};
-    left: 0;
-    position: absolute;
+  .main-services-tile:nth-of-type(3) {
+    border-left: rgba(116, 187, 252, 0.4) solid 0.2rem;
+    border-bottom: rgba(116, 187, 252, 0.3) solid 0.2rem;
   }
-  .main-services-tile:nth-of-type(2) > .main-services-figures-title::after {
-    content: 'Get your personalized IBAN wallet + a Debit card';
-    font-size: 1.125rem;
-    bottom: -3rem;
-    font-weight: 400;
-    text-align: left;
-    color: ${props => props.theme.colors.purple};
-    left: 0;
-    position: absolute;
-  }
-  .main-services-tile:nth-of-type(3) > .main-services-figures-title::after {
-    content: 'Operate your very own coinhaven FIAT and cryptocurrency wallets';
-    font-size: 1.125rem;
-    bottom: -3rem;
-    font-weight: 400;
 
+  .main-services-figures-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 17rem;
+  }
+
+  .main-services-figures-sub {
+    font-size: 1.125rem;
+    max-width: 20.125rem;
+    font-weight: 400;
     text-align: left;
+    margin: 0;
     color: ${props => props.theme.colors.purple};
-    left: 0;
-    position: absolute;
+
   }
 
   .main-services-tile:nth-of-type(3) > .main-services-figures-title {
@@ -286,16 +253,10 @@ const HomeStyled = styled.div`
     width: 18.938rem;
   }
 
-
-
   .main-services-figures-subtitle {
     color: ${props => props.theme.colors.purple};
     font-weight: 100;
     text-align: left;
-  }
-
-  .main-services-tile:nth-of-type(even)::before {
-    background: ${props => props.theme.gradients.lightHorizontal};
   }
 
   .main-services-tile:nth-of-type(3) {
@@ -303,20 +264,15 @@ const HomeStyled = styled.div`
   }
 
   .main-services-tile:nth-of-type(3) {
-    border-top: 0.1rem solid ${props => props.theme.colors.purple};
-    border-left: ${props => props.theme.colors.purple} 0.1rem solid;
-    border-bottom: ${props => props.theme.colors.purple} 0.1rem solid;
-    background: linear-gradient(92.63deg, rgba(206, 242, 255, 0.5) -0.56%, rgba(208, 227, 255, 0) 76.39%);
+     background: linear-gradient(92.63deg, rgba(206, 242, 255, 0.5) -0.56%, rgba(208, 227, 255, 0) 76.39%);
 
   }
   .main-services-tile:nth-of-type(2) {
-    border-right: ${props => props.theme.colors.purple} 0.1rem solid;
     background: linear-gradient(-138deg,rgba(206, 242, 255, 0.5) 9.61%,rgba(208,227,255,0) 45.96% );
   }
 
   .main-services-tile:nth-of-type(4) {
-    border-right: ${props => props.theme.colors.purple} 0.1rem solid;
-    background: linear-gradient(50.45deg, rgba(151, 204, 252, 0) 60%, #74BBFC 280.42%);
+    background: linear-gradient(50.45deg, rgba(151, 204, 252, 0) 60%, rgba(116, 187, 252, 1) 280.42%);
   }
 
   .main-services-figures-image {
@@ -405,7 +361,7 @@ const HomeStyled = styled.div`
 
 .competitive-advantage-section {
   background-color: ${props => props.theme.colors.darkerBlue};
-  background-image: url('/assets/images/Polygon.svg');
+  background-image: url('/assets/images/polygon.svg');
   background-position: 98% -3.3125rem;
   background-repeat: no-repeat;
   margin-top: 1.875rem;
@@ -646,8 +602,6 @@ const HomeStyled = styled.div`
     }
   }
 }
-
-
 `;
 
 export default HomeStyled;
