@@ -5,7 +5,6 @@ import HomeStyled from './HomeStyled';
 import { isUndefined } from 'lodash';
 import TeamData from './data/team.json';
 import SocialIcon from '@styles/helper/SocialIcon';
-import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 import CryptoData from './data/Crypto.json';
 import Card from '@components/ExchangeRateCard';
 import BankSVG from '../../../public/assets/images/bank.svg';
