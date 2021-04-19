@@ -144,6 +144,7 @@ const HomeStyled = styled.div`
   background-image: url('/assets/images/polygon4.png');
   background-repeat: no-repeat;
   background-position: -4rem 30rem;
+  margin-bottom: 4.125rem;
 
   .main-services-container {
     width: 70%;
@@ -376,7 +377,6 @@ const HomeStyled = styled.div`
   background-position: 98% 1.5rem;
   background-repeat: no-repeat;
   padding-top: 2.938rem;
-  margin-top: 1rem;
 }
 
 .competitive-advantage-section {
