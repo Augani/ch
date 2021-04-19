@@ -26,7 +26,7 @@ const renderChart = (svgRef: any, [data, mode]: any) => {
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
   /** Parse the date that is in the data for labeling and ordering */
-  data = data.map(l => {
+  data = data.map((l: { date: string; value: any }) => {
     return { date: d3.timeParse('%Y-%m-%d')(l.date), value: l.value };
   });
 
