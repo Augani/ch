@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-import { ICheckBoxProps } from './type';
 
 export const ICheckBoxPropsStyled = styled.div`
   display: flex;
