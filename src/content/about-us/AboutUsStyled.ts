@@ -9,7 +9,7 @@ const AboutUsStyled = styled.div`
   .hero-section {
     min-height: 25rem;
     background-color: ${props => props.theme.colors.darkerBlue};
-    background-image: url('/assets/images/Slider.svg');
+    background-image: url('/assets/images/slider.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,7 +100,7 @@ const AboutUsStyled = styled.div`
 
   .competitive-advantage-section {
     background-color: ${props => props.theme.colors.darkerBlue};
-    background-image: url('/assets/images/Polygon.svg');
+    background-image: url('/assets/images/polygon.svg');
     background-position: 98% -3.3125rem;
     background-repeat: no-repeat;
     margin-top: 1.875rem;

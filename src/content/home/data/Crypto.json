@@ -1,6 +1,6 @@
 [
   {
-    "name": "CNY",
+    "name": "BTC/USDT",
     "price": 23.4,
     "change": "-5.8",
     "volume": 7112332,
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "name": "SEK",
+    "name": "ETH/USDT",
     "price": 31.3,
     "change": "+2.7",
     "volume": 83489382,
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "name": "PHP",
+    "name": "LTC/USDT",
     "price": 44.9,
     "change": "+4.3",
     "volume": 318897978,
@@ -132,7 +132,7 @@
     ]
   },
   {
-    "name": "CNY",
+    "name": "ADA/USDT",
     "price": 12.3,
     "change": "+3.4",
     "volume": 46878866876,
@@ -176,7 +176,7 @@
     ]
   },
   {
-    "name": "IDR",
+    "name": "XRP/USDT",
     "price": 7.2,
     "change": "-5.6",
     "volume": 36767787687,
