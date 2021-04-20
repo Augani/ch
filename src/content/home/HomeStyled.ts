@@ -367,7 +367,7 @@ const HomeStyled = styled.div`
 
   .f-form-submit {
     font-family: Open Sans;
-    font-weight: bold;
+    font-weight: 600;
     font-style: normal;
     font-size: 1.125rem;
     height: 3.5rem;
