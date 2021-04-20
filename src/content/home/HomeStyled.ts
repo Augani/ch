@@ -301,8 +301,9 @@ const HomeStyled = styled.div`
     width: 100%;
     height: 22.25rem;
     align-items: center;
+    border-radius: 0.25rem;
     justify-content: center;
-    background-image: ${props => props.theme.gradients.lightVertical};
+    background: linear-gradient(0deg, rgba(151, 228, 252, 0) 0%, rgba(146, 246, 252, 0.3048) 30.25%, rgba(132, 223, 252, 0.6855) 68.04%, #74A2FC 99.26%);
   }
 
   .f-form-formgroup {
@@ -311,8 +312,9 @@ const HomeStyled = styled.div`
   }
 
   .f-form-label {
-    font-size: 1.1rem;
-    opacity: 0.3;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.4;
     line-height: 1.5rem;
     color: ${props => props.theme.colors.darkBlue};
     opacity: 0.3;
@@ -322,6 +324,7 @@ const HomeStyled = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     height: 3rem;
     width: 19.688rem;
     border-radius: 0.25rem;
@@ -334,39 +337,48 @@ const HomeStyled = styled.div`
     padding-left: 1.313em;
     padding-right: 0.2em;
     background: transparent;
+    line-height: 1.5rem;
     color: ${props => props.theme.colors.darkBlue};
   }
+
+
 
   .f-form-input:nth-of-type(1) {
     height: 100%;
     width: 65%;
     border: none;
+    opacity: 0.4;
   }
 
   .f-form-input:nth-of-type(2) {
     height: 100%;
     width: 35%;
     border: none;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    color: #001DC6;
   }
 
   .f-form-line {
-    width: 0.005rem;
-    height: 70%;
+    width: 0;
+    height: 1.5rem;
+    border: 0.063rem solid #DADAFF;
   }
 
   .f-form-submit {
-    ${props => props.theme.typography.variant.button};
-    height: 2.7rem;
+    font-family: Open Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.125rem;
+    height: 3.5rem;
     width: 14.5rem;
     outline: none;
     border: none;
     text-transform: uppercase;
-    box-shadow: ${props => props.theme.shadow.five};
     background: ${props => props.theme.colors.lightBlue};
     box-shadow: 0px 4px 16px rgba(78, 81, 255, 0.32);
     letter-spacing: 0.05em;
     border-radius: 0.25rem;
-    text-transform: uppercase;
     line-height: 2.125rem;
     color: ${props => props.theme.colors.white};
   }

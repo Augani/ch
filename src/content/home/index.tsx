@@ -135,46 +135,49 @@ const Home: FunctionComponent = () => {
         </section>
 
         {/* Competitive advantage section */}
-         <div className='competitive-cover'>
-         <section className='competitive-advantage-section'>
-          <div className='container'>
-            <h3 className='styled-stroke'>Competitive advantage</h3>
+        <div className='competitive-cover'>
+          <section className='competitive-advantage-section'>
+            <div className='container'>
+              <h3 className='styled-stroke'>Competitive advantage</h3>
 
-            <div className='competitive-advantages'>
-              <div className='competitive-advantage-item'>
-                <div className='competitive-icon'>
-                  <img src='/assets/icons/security.svg' alt='security icon' />
+              <div className='competitive-advantages'>
+                <div className='competitive-advantage-item'>
+                  <div className='competitive-icon'>
+                    <img src='/assets/icons/security.svg' alt='security icon' />
+                  </div>
+                  <h5>SECURITY</h5>
+                  <p>
+                    Sleep soundly with your assets safely stored in bulletproof
+                    cold storage
+                  </p>
                 </div>
-                <h5>SECURITY</h5>
-                <p>
-                  Sleep soundly with your assets safely stored in bulletproof
-                  cold storage
-                </p>
-              </div>
-              <div className='competitive-advantage-item'>
-                <div className='competitive-icon'>
-                  <img src='/assets/icons/liquidity.svg' alt='liquidity icon' />
+                <div className='competitive-advantage-item'>
+                  <div className='competitive-icon'>
+                    <img
+                      src='/assets/icons/liquidity.svg'
+                      alt='liquidity icon'
+                    />
+                  </div>
+                  <h5>LIQUIDITY</h5>
+                  <p>
+                    Buy, sell and swap between 9+ cryptocurrencies quickly and
+                    easily.
+                  </p>
                 </div>
-                <h5>LIQUIDITY</h5>
-                <p>
-                  Buy, sell and swap between 9+ cryptocurrencies quickly and
-                  easily.
-                </p>
-              </div>
-              <div className='competitive-advantage-item'>
-                <div className='competitive-icon'>
-                  <img src='/assets/icons/fees.svg' alt='fees icon' />
+                <div className='competitive-advantage-item'>
+                  <div className='competitive-icon'>
+                    <img src='/assets/icons/fees.svg' alt='fees icon' />
+                  </div>
+                  <h5>LOW FEES</h5>
+                  <p>
+                    Save money with low exchange fees and withdrawal
+                    commissions.
+                  </p>
                 </div>
-                <h5>LOW FEES</h5>
-                <p>
-                  Save money with low exchange fees and withdrawal commissions.
-                </p>
               </div>
             </div>
-          </div>
-        </section>
-
-           </div>
+          </section>
+        </div>
         {/* Roadmap section */}
         <section className='roadmap-section'>
           <div className='container'>
