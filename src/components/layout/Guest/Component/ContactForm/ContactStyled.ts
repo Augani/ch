@@ -38,7 +38,8 @@ export const ContactStyled = styled.div`
   }
 
   .modal-c-title {
-    margin-bottom: 0.75rem;
+    margin: 0;
+    margin-bottom: 2.25rem;
     font-size: 2.25rem;
     font-weight: bold;
     line-height: 3.063rem;
@@ -84,6 +85,7 @@ export const ContactStyled = styled.div`
     width: 14.5rem;
     margin-left: auto;
     height: 3.5rem;
+    margin-top: 3rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     border-radius: 0.2rem;
@@ -94,5 +96,9 @@ export const ContactStyled = styled.div`
     border: none;
     box-shadow: ${props => props.theme.shadow.five};
     cursor: pointer;
+  }
+
+  .modal-c-submit:disabled {
+    box-shadow: none;
   }
 `;
