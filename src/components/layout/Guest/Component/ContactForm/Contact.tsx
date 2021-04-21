@@ -3,8 +3,8 @@ import React, { FunctionComponent } from 'react';
 import { ContactStyled } from './ContactStyled';
 import { useFormik } from 'formik';
 import { IContactFormFieldProps } from './type';
-import { TextField } from '@ui-base/TextField';
-import { Button } from '@ui-base/Button';
+import { TextField } from '@ui-base/TextField/Index';
+import { Button } from '@ui-base/Button/Index';
 
 const Contact: FunctionComponent = () => {
   const SendData = (data: IContactFormFieldProps) => {};
