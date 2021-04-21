@@ -3,10 +3,13 @@ import styled from 'styled-components';
 export const HeaderStyled = styled.header`
   padding-top: 1.5625rem;
   padding-bottom: 1.5625rem;
+  padding-left: 2.5rem;
   min-height: 1.5625rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 0;
 
   &.light {
     background-color: transparent;
