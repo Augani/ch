@@ -3,10 +3,10 @@ import React, { FunctionComponent } from 'react';
 import { ContactStyled } from './ContactStyled';
 import { useFormik } from 'formik';
 import { IContactFormFieldProps } from './type';
+import { TextField } from '@ui-base/TextField';
+import { Button } from '@ui-base/Button';
 
 const Contact: FunctionComponent = () => {
-  const [disabled, setDisabled] = React.useState(true);
-
   const SendData = (data: IContactFormFieldProps) => {};
 
   const validateForm = (values: IContactFormFieldProps) => {
@@ -16,7 +16,10 @@ const Contact: FunctionComponent = () => {
       description: '',
       subject: ''
     };
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress)) {
+    if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress) &&
+      values.emailAddress
+    ) {
       errors.emailAddress = 'Email address is invalid';
     }
     return errors;
@@ -39,36 +42,38 @@ const Contact: FunctionComponent = () => {
       <form onSubmit={formik.handleSubmit} className='modal-c-contact'>
         <h1 className='modal-c-title'>Contact Us</h1>
         <div className='modal-c-formgroup'>
-          <label className='modal-c-label'>Full Name</label>
-          <input
-            placeholder='Enter full name'
-            required
+          <TextField
+            inputSize='large'
+            type='text'
             name='fullName'
+            placeholder='Enter full name'
+            className='modal-c-input'
             onChange={formik.handleChange}
             value={formik.values.fullName}
-            type='text'
+            label='Full Name'
+          />
+        </div>
+        <div className='modal-c-formgroup'>
+          <TextField
+            label='Email Address'
+            placeholder='Enter email address'
+            required
+            inputSize='large'
+            name='emailAddress'
+            onChange={formik.handleChange}
+            value={formik.values.emailAddress}
+            error={!!formik.errors.emailAddress}
+            errorText={formik.errors.emailAddress}
+            type='email'
             className='modal-c-input'
           />
         </div>
         <div className='modal-c-formgroup'>
-          <label className='modal-c-label'>Email Address</label>
-          <input
-            placeholder='Enter email address'
-            required
-            name='emailAddress'
-            onChange={formik.handleChange}
-            value={formik.values.emailAddress}
-            type='email'
-            className={`modal-c-input ${
-              formik.errors.emailAddress ? 'error' : ''
-            }`}
-          />
-        </div>
-        <div className='modal-c-formgroup'>
-          <label className='modal-c-label'>Subject</label>
-          <input
+          <TextField
+            inputSize='large'
             placeholder='Enter subject'
             required
+            label='Subject'
             name='subject'
             type='text'
             onChange={formik.handleChange}
@@ -88,14 +93,16 @@ const Contact: FunctionComponent = () => {
             className='modal-c-textarea'
           ></textarea>
         </div>
-        <button
-          disabled={
-            !!Object.values(formik.errors).filter(o => !o.length).length
-          }
+        <Button
+          size='large'
+          mode='dark'
           className='modal-c-submit'
-        >
-          submit
-        </button>
+          disabled={
+            !!Object.values(formik.errors).filter(o => o.length).length ||
+            Object.values(formik.values).filter(o => o.length).length !== 4
+          }
+          text='Submit'
+        />
       </form>
     </ContactStyled>
   );

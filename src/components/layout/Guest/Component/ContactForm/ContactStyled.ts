@@ -14,12 +14,13 @@ export const ContactStyled = styled.div`
 
   .modal-c-textarea {
     width: 100%;
+    font-family: Open Sans;
     height: 7.438rem;
-    background-color: ${props => props.theme.colors.darkGray};
+    background-color: ${props => props.theme.colors.light};
     border: none;
     border-radius: 0.2rem;
-    color: var(--dark-blue);
-    font-size: 0.9rem;
+    color: ${props => props.theme.colors.darkBlue};
+    font-size: 1rem;
     padding: 0.6rem;
   }
 
@@ -31,6 +32,7 @@ export const ContactStyled = styled.div`
 
   .modal-c-label {
     font-size: 0.875rem;
+    margin-bottom: 0.3rem;
     color: ${props => props.theme.colors.darkBlue};
     opacity: 0.4;
   }
@@ -46,7 +48,7 @@ export const ContactStyled = styled.div`
   .modal-c-input {
     height: 3rem;
     width: 25rem;
-    background: ${props => props.theme.colors.darkGray};
+    background: ${props => props.theme.colors.light};
     border: none;
     border-radius: 0.25rem;
     color: ${props => props.theme.colors.darkBlue};
@@ -55,7 +57,19 @@ export const ContactStyled = styled.div`
     line-height: 1.5rem;
   }
 
-  :where(.modal-c-textarea, .modal-c-input)::placeholder {
+  textarea::-webkit-input-placeholder {
+    color: ${props => props.theme.colors.darkBlue};
+    opacity: 0.4;
+  }
+  ::-moz-placeholder {
+    color: ${props => props.theme.colors.darkBlue};
+    opacity: 0.4;
+  }
+  :-ms-input-placeholder {
+    color: ${props => props.theme.colors.darkBlue};
+    opacity: 0.4;
+  }
+  :-moz-placeholder {
     color: ${props => props.theme.colors.darkBlue};
     opacity: 0.4;
   }
@@ -67,25 +81,18 @@ export const ContactStyled = styled.div`
   }
 
   .modal-c-submit {
-    width: 50%;
+    width: 14.5rem;
     margin-left: auto;
-    height: 2.4rem;
-    margin-top: 3rem;
+    height: 3.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     border-radius: 0.2rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1.125rem;
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.lightBlue};
     border: none;
     box-shadow: ${props => props.theme.shadow.five};
     cursor: pointer;
-  }
-
-  input.error {
-    border: 1.5px solid #f55959;
-  }
-
-  .modal-c-submit:disabled {
-    background-color: ${props => props.theme.colors.darkGray};
   }
 `;
