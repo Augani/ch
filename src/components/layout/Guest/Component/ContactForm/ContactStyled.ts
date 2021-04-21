@@ -81,6 +81,10 @@ export const ContactStyled = styled.div`
     cursor: pointer;
   }
 
+  input.error {
+    border: 1.5px solid #f55959;
+  }
+
   .modal-c-submit:disabled {
     background-color: ${props => props.theme.colors.darkGray};
   }
