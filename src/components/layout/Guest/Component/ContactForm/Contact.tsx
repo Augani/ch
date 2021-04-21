@@ -98,8 +98,10 @@ const Contact: FunctionComponent = () => {
           mode='dark'
           className='modal-c-submit'
           disabled={
-            !!Object.values(formik.errors).filter(o => o.length).length ||
-            Object.values(formik.values).filter(o => o.length).length !== 4
+            !!Object.values(formik.errors).filter((o: string) => o.length)
+              .length ||
+            Object.values(formik.values).filter((o: string) => o.length)
+              .length !== 4
           }
           text='Submit'
         />
