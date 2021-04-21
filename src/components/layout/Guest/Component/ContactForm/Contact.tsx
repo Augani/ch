@@ -37,6 +37,11 @@ const Contact: FunctionComponent = () => {
       SendData(values);
     }
   });
+
+  const disabled: boolean = Object.values(formik.values).some((v: string) => {
+    return !v.length;
+  });
+
   return (
     <ContactStyled>
       <form onSubmit={formik.handleSubmit} className='modal-c-contact'>
@@ -97,12 +102,7 @@ const Contact: FunctionComponent = () => {
           size='large'
           mode='dark'
           className='modal-c-submit'
-          disabled={
-            !!Object.values(formik.errors).filter((o: string) => o.length)
-              .length ||
-            Object.values(formik.values).filter((o: string) => o.length)
-              .length !== 4
-          }
+          disabled={disabled}
           text='Submit'
         />
       </form>
