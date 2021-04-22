@@ -19,9 +19,7 @@ const colors = {
   black: '#111111',
   green: '#26E29C',
   red: '#F55959',
-  orange: '#F7931A',
-  lightGray: '#9495b9',
-  darkGray: '#9597A1'
+  orange: '#F7931A'
 };
 
 const pallets = {
