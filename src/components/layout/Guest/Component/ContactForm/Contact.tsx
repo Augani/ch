@@ -29,7 +29,6 @@ const Contact: FunctionComponent = () => {
     },
     validate: validateForm,
     onSubmit: values => {
-      console.log(values);
       SendData(values);
     }
   });
