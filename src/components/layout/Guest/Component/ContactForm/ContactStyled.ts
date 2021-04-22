@@ -21,7 +21,10 @@ export const ContactStyled = styled.div`
     border-radius: 0.2rem;
     color: ${props => props.theme.colors.darkBlue};
     font-size: 1rem;
-    padding: 0.6rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .modal-c-formgroup {
@@ -54,7 +57,10 @@ export const ContactStyled = styled.div`
     border-radius: 0.25rem;
     color: ${props => props.theme.colors.darkBlue};
     font-size: 1rem;
-    padding: 0.6rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     line-height: 1.5rem;
   }
 
@@ -96,5 +102,9 @@ export const ContactStyled = styled.div`
     border: none;
     box-shadow: 0rem 0.25rem 1rem rgba(78, 81, 255, 0.32);
     cursor: pointer;
+  }
+
+  .modal-c-submit:disabled {
+    box-shadow: none;
   }
 `;
