@@ -12,27 +12,9 @@ export const SubscribeStyled = styled.div`
     flex-direction: column;
   }
 
-  .modal-c-textarea {
-    width: 100%;
-    height: 7.438rem;
-    background-color: var(--back-gray);
-    border: none;
-    border-radius: 0.2rem;
-    color: var(--dark-blue);
-    font-size: 0.9rem;
-    padding: 0.6rem;
-  }
-
   .modal-c-formgroup {
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
     width: 100%;
-  }
-
-  .modal-c-label {
-    font-size: 0.875rem;
-    color: ${props => props.theme.colors.darkBlue};
-    opacity: 0.4;
   }
 
   .modal-c-title {
@@ -56,7 +38,7 @@ export const SubscribeStyled = styled.div`
     line-height: 1.5rem;
   }
 
-  :where(.modal-c-textarea, .modal-c-input)::placeholder {
+  :where(.modal-c-input)::placeholder {
     color: ${props => props.theme.colors.darkBlue};
     opacity: 0.4;
   }
@@ -64,20 +46,24 @@ export const SubscribeStyled = styled.div`
   .modal-c-subtitle {
     font-size: 1.125rem;
     font-weight: bold;
-    margin-bottom: 2.25rem;
+    margin-bottom: 0.75rem;
   }
 
   .modal-c-submit {
     width: 14.5rem;
     margin-left: auto;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
     height: 3.5rem;
+    letter-spacing: 0.05em;
     margin-top: 3rem;
     border-radius: 0.2rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1.125rem;
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.lightBlue};
-    box-shadow: ${props => props.theme.shadow.five};
+    box-shadow: 0px 4px 16px rgba(78, 81, 255, 0.32);
     border: none;
     cursor: pointer;
   }

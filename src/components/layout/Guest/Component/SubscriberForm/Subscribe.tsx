@@ -2,17 +2,14 @@
 import React, { FunctionComponent } from 'react';
 import { SubscribeStyled } from './SubscribeStyled';
 import { TextField } from '@ui-base/TextField/Index';
-import { ISubscribeFormFieldProps } from './type';
+import { ISubscribeFormFieldProps, IErrorField } from './type';
 import { useFormik } from 'formik';
 import { Button } from '@ui-base/Button/Index';
 const Subscribe: FunctionComponent = () => {
   const SendData = (data: ISubscribeFormFieldProps) => {};
 
   const validateForm = (values: ISubscribeFormFieldProps) => {
-    const errors: ISubscribeFormFieldProps = {
-      fullName: '',
-      emailAddress: ''
-    };
+    const errors: IErrorField = {};
     if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress) &&
       values.emailAddress
@@ -34,7 +31,7 @@ const Subscribe: FunctionComponent = () => {
   });
 
   const disabled: boolean = Object.values(formik.values).some((v: string) => {
-    return !v.length && !formik.errors.emailAddress;
+    return !v.length || formik.errors.emailAddress;
   });
   return (
     <SubscribeStyled>
@@ -73,6 +70,7 @@ const Subscribe: FunctionComponent = () => {
           disabled={disabled}
           className='modal-c-submit'
           text='Submit'
+          type='submit'
           mode='dark'
           size='large'
         />
