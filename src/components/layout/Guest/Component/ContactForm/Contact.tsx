@@ -2,7 +2,7 @@
 import React, { FunctionComponent } from 'react';
 import { ContactStyled } from './ContactStyled';
 import { useFormik } from 'formik';
-import { IContactFormFieldProps } from './type';
+import { IContactFormFieldProps, IErrorField } from './type';
 import { TextField } from '@ui-base/TextField/Index';
 import { Button } from '@ui-base/Button/Index';
 
@@ -10,12 +10,7 @@ const Contact: FunctionComponent = () => {
   const SendData = (data: IContactFormFieldProps) => {};
 
   const validateForm = (values: IContactFormFieldProps) => {
-    const errors: IContactFormFieldProps = {
-      fullName: '',
-      emailAddress: '',
-      description: '',
-      subject: ''
-    };
+    const errors: IErrorField = {};
     if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress) &&
       values.emailAddress
@@ -33,7 +28,8 @@ const Contact: FunctionComponent = () => {
       description: ''
     },
     validate: validateForm,
-    onSubmit: (values: IContactFormFieldProps) => {
+    onSubmit: values => {
+      console.log(values);
       SendData(values);
     }
   });
@@ -41,6 +37,8 @@ const Contact: FunctionComponent = () => {
   const disabled: boolean = Object.values(formik.values).some((v: string) => {
     return !v.length;
   });
+
+  console.log(formik.errors);
 
   return (
     <ContactStyled>
@@ -101,6 +99,7 @@ const Contact: FunctionComponent = () => {
         <Button
           size='large'
           mode='dark'
+          type='submit'
           className='modal-c-submit'
           disabled={disabled}
           text='Submit'
