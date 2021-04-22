@@ -7,6 +7,8 @@ export default createGlobalStyle`
     color: ${props => props.theme.pallets.secondary};
     font-size: 16px;
     max-width: 100vw;
+    margin: 0;
+    padding: 0;
     min-width: 320px;
     font-family: "Open Sans", sans-serif;
     margin: 0;

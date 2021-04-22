@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { useState } from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
-import Modal from './Modal';
+import Modal from '.';
 
 export default {
   component: Modal,
