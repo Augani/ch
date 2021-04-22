@@ -16,7 +16,7 @@ export const ContactStyled = styled.div`
     width: 100%;
     font-family: Open Sans;
     height: 7.438rem;
-    background-color: ${props => props.theme.colors.light};
+    background-color: rgba(149, 151, 161, 0.1);
     border: none;
     border-radius: 0.2rem;
     color: ${props => props.theme.colors.darkBlue};
@@ -49,7 +49,7 @@ export const ContactStyled = styled.div`
   .modal-c-input {
     height: 3rem;
     width: 25rem;
-    background: ${props => props.theme.colors.light};
+    background: rgba(149, 151, 161, 0.1);
     border: none;
     border-radius: 0.25rem;
     color: ${props => props.theme.colors.darkBlue};
@@ -94,11 +94,7 @@ export const ContactStyled = styled.div`
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.lightBlue};
     border: none;
-    box-shadow: ${props => props.theme.shadow.five};
+    box-shadow: 0rem 0.25rem 1rem rgba(78, 81, 255, 0.32);
     cursor: pointer;
-  }
-
-  .modal-c-submit:disabled {
-    box-shadow: none;
   }
 `;
