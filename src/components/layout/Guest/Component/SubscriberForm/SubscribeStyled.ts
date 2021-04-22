@@ -36,6 +36,7 @@ export const SubscribeStyled = styled.div`
   }
 
   .modal-c-title {
+    margin: 0;
     margin-bottom: 0.75rem;
     font-size: 2.25rem;
     font-weight: bold;
@@ -46,12 +47,12 @@ export const SubscribeStyled = styled.div`
   .modal-c-input {
     height: 3rem;
     width: 25rem;
-    background: ${props => props.theme.colors.darkGray};
+    background: rgba(149, 151, 161, 0.1);
     border: none;
     border-radius: 0.25rem;
     color: ${props => props.theme.colors.darkBlue};
     font-size: 1rem;
-    padding: 0.6rem;
+    padding-right: 1.5rem;
     line-height: 1.5rem;
   }
 
@@ -67,9 +68,9 @@ export const SubscribeStyled = styled.div`
   }
 
   .modal-c-submit {
-    width: 50%;
+    width: 14.5rem;
     margin-left: auto;
-    height: 2.4rem;
+    height: 3.5rem;
     margin-top: 3rem;
     border-radius: 0.2rem;
     text-transform: uppercase;
@@ -82,6 +83,11 @@ export const SubscribeStyled = styled.div`
   }
 
   .modal-c-submit:disabled {
-    background-color: ${props => props.theme.colors.darkGray};
+    background-color: ${props => props.theme.colors.light};
+    box-shadow: none;
+  }
+
+  .modal-c-submit:disabled:hover {
+    background-color: ${props => props.theme.colors.light};
   }
 `;
