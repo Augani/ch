@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const SubscribeStyled = styled.div`
   .modal-c-signup {
     width: 25rem;
-    height: 29.063rem;
-    background-color: var(--text-normal);
+    height: 26.23rem;
+    background-color: ${props => props.theme.colors.white};
     border-radius: 0.2rem;
     position: relative;
-    color: var(--dark-blue);
     display: flex;
     flex-direction: column;
   }
@@ -46,6 +45,7 @@ export const SubscribeStyled = styled.div`
   .modal-c-subtitle {
     font-size: 1.125rem;
     font-weight: bold;
+    line-height: 1.563rem;
     margin-bottom: 0.75rem;
   }
 
