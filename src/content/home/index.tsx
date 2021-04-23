@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import Head from 'next/head';
 import GuestLayout from '@layout/Guest/GuestLayout';
 import HomeStyled from './HomeStyled';
@@ -7,8 +7,27 @@ import TeamData from './data/team.json';
 import SocialIcon from '@styles/helper/SocialIcon';
 import CryptoData from './data/Crypto.json';
 import Card from '@components/ExchangeRateCard';
+import ConnectSocket from '@utils/helpers/connectSocket';
 
 const Home: FunctionComponent = () => {
+  useEffect(() => {
+    const socket = new ConnectSocket(
+      // 'ws://3.121.186.68:9191/coin-price-monitor'
+      'ws://localhost:9191'
+    );
+    socket.send({
+      type: 'monitor/coins/exchange-rate',
+      payload: {
+        coins: ['btc/usdt', 'eth/usdt']
+      },
+      callback: (error, data) => {
+        if (error) return;
+        console.log('---data---');
+        console.log(data);
+      }
+    });
+  }, []);
+
   return (
     <GuestLayout>
       <Head>

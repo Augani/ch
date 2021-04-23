@@ -8,9 +8,9 @@ type TmessageType = string;
 type TbinaryType = 'arraybuffer' | 'blob';
 interface ISend {
   type: TmessageType;
-  payload: Tpayload;
-  callback?: Tcallback;
+  payload?: Tpayload;
   subscribe?: boolean;
+  callback?: Tcallback;
 }
 interface IReceive {
   type: TmessageType;
@@ -58,7 +58,7 @@ class ConnectSocket {
    * This method will help to generate a unique ID for each socket.send
    * @returns it will return an unique string
    */
-  private generateRequestId = () => `${uniqueId()}_${now()}`;
+  private generateRequestId = () => `${uniqueId('skt')}_${now()}`;
 
   /**
    * This method will add WS requestId in queue to monitor a response for that requestId from backend WS
@@ -139,12 +139,15 @@ class ConnectSocket {
            * callback function should not undefined on emit method as third param
            ************************************************/
           if (!subscribe) {
+            console.log('---this.requestIdsQueue---');
+            console.log(this.requestIdsQueue);
+            console.log(data);
             if (
               this.requestIdsQueue.includes(data.requestId) &&
               data?.type === type &&
-              !isUndefined(callback) &&
-              !subscribe
+              !isUndefined(callback)
             ) {
+              console.log(`----data.requestId---- ${data.requestId}`);
               this.unmonitorRequestCallback(data.requestId);
               callback?.(false, data);
             }
