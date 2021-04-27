@@ -67,7 +67,7 @@ export const SelectField: FunctionComponent<ISelectFieldProps> = props => {
   };
 
   return (
-    <SelectFieldStyled ref={SelectField}>
+    <SelectFieldStyled active={active} ref={SelectField}>
       <label>{label}</label>
       <div
         {...rest}
@@ -80,7 +80,7 @@ export const SelectField: FunctionComponent<ISelectFieldProps> = props => {
           <p>{userSelected.label}</p>
           {iconsRight ? <img src={userSelected.icon} /> : null}
         </div>
-        {active ? <ChevronUp /> : <ChevronDown />}
+        <ChevronDown />
         <ListStyled tabIndex={active ? 0 : -1} active={active}>
           <ul>
             {options &&

@@ -54,7 +54,7 @@ export const TextFieldStyled = styled.div<ITextFieldProps>`
   }
 `;
 
-export const SelectFieldStyled = styled.div`
+export const SelectFieldStyled = styled.div<ISelectListProps>`
   position: relative;
 
   label {
@@ -63,6 +63,16 @@ export const SelectFieldStyled = styled.div`
     opacity: 0.4;
     margin-bottom: 0.3rem;
     text-transform: capitalize;
+  }
+
+  svg {
+    transition: all 0.3s ease;
+    ${props => (props.active ? 'transform: rotate(180deg);' : '')};
+    color: ${props => (props.active ? props.theme.colors.lightBlue : '')};
+  }
+
+  svg path {
+    ${props => (props.active ? 'opacity: 1;' : '')};
   }
 
   img {
