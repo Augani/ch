@@ -55,7 +55,7 @@ const Contact: FunctionComponent = () => {
             placeholder='Enter email address'
             inputSize='large'
             {...formik.getFieldProps('email')}
-            error={!!formik.errors.email}
+            error={!!formik.errors.email && formik.touched.email}
             errorText={formik.errors.email}
             type='email'
             className='modal-c-input'

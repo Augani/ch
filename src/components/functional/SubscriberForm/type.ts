@@ -1,8 +1,8 @@
 export interface ISubscribeFormFieldProps {
   fullName: string;
-  emailAddress: string;
+  email: string;
 }
 
 export interface IErrorField {
-  emailAddress?: string;
+  email?: string;
 }

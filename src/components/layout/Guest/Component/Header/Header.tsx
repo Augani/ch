@@ -3,7 +3,7 @@ import { HeaderStyled } from './HeaderStyled';
 import Link from 'next/link';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 import Modal from '@ui-base/Modal';
-import Subscribe from '../SubscriberForm/Subscribe';
+import Subscribe from '../../../../functional/SubscriberForm/Subscribe';
 import Contact from '../../../../functional/ContactForm/Contact';
 
 const Header: FunctionComponent = () => {
