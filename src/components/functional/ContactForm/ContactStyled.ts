@@ -106,5 +106,6 @@ export const ContactStyled = styled.div`
 
   .modal-c-submit:disabled {
     box-shadow: none;
+    background-color: rgba(148,149,185,0.4);
   }
 `;
