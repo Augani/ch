@@ -38,7 +38,7 @@ export const SelectField: FunctionComponent<ISelectFieldProps> = props => {
   const select = defaultSelect || options[0];
   const [userSelected, setUserSelected] = React.useState(select);
   const [active, setActive] = React.useState(false);
-  const SelectField = React.useRef<HTMLDivElement>(null);
+  const SelectField = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   React.useEffect(() => {
     onValueChanged(userSelected);
@@ -55,7 +55,7 @@ export const SelectField: FunctionComponent<ISelectFieldProps> = props => {
   React.useEffect(() =>
     window.addEventListener('click', ev => {
       if (!SelectField.current) return;
-      if (!SelectField.current.contains(ev.target)) {
+      if (!SelectField.current.contains(ev.target as Node)) {
         setActive(false);
       }
     })
@@ -75,9 +75,11 @@ export const SelectField: FunctionComponent<ISelectFieldProps> = props => {
         tabIndex={active ? -1 : 0}
         className='field'
       >
-        {iconLeft ? <img src={userSelected.icon} /> : null}
-        <p>{userSelected.label}</p>
-        {iconsRight ? <img src={userSelected.icon} /> : null}
+        <div className='inner'>
+          {iconLeft ? <img src={userSelected.icon} /> : null}
+          <p>{userSelected.label}</p>
+          {iconsRight ? <img src={userSelected.icon} /> : null}
+        </div>
         {active ? <ChevronUp /> : <ChevronDown />}
         <ListStyled tabIndex={active ? 0 : -1} active={active}>
           <ul>

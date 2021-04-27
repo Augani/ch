@@ -79,7 +79,7 @@ export const SelectFieldStyled = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
@@ -87,7 +87,7 @@ export const SelectFieldStyled = styled.div`
     border-radius: 0.25rem;
     line-height: 1.5rem;
     margin-bottom: 0.63rem;
-    color: ${props => props.theme.colors.darkPurple};
+    padding: 0 1.313rem;
 
     :hover {
       border: 1.5px solid ${props => props.theme.colors.extraLightBlue};
@@ -95,6 +95,18 @@ export const SelectFieldStyled = styled.div`
 
     p {
       opacity: 0.8;
+      color: ${props => props.theme.colors.darkBlue};
+    }
+
+    p:hover {
+      color: ${props => props.theme.colors.lightBlue};
+    }
+
+    .inner {
+      max-height: 3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
   }
 `;
