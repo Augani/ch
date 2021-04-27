@@ -79,23 +79,24 @@ export const SelectFieldStyled = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875rem;
+    justify-content: space-between;
     border-radius: 0.25rem;
-    line-height: 1.5rem;
     margin-bottom: 0.63rem;
     padding: 0 1.313rem;
+    border: 0.094rem solid transparent;
 
     :hover {
-      border: 1.5px solid ${props => props.theme.colors.extraLightBlue};
+      border: 0.094rem solid ${props => props.theme.colors.extraLightBlue};
     }
 
     p {
       opacity: 0.8;
       color: ${props => props.theme.colors.darkBlue};
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
     }
 
     p:hover {
@@ -148,7 +149,7 @@ export const ListStyled = styled.div<ISelectListProps>`
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.5rem;
     cursor: pointer;
     border-radius: 0.5rem;
