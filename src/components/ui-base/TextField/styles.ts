@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ITextFieldProps } from './type';
+import { ITextFieldProps, ISelectListProps } from './type';
 
 export const TextFieldStyled = styled.div<ITextFieldProps>`
   display: flex;
@@ -51,5 +51,107 @@ export const TextFieldStyled = styled.div<ITextFieldProps>`
 
   input.error {
     box-shadow: 0 0 0 0.1rem ${props => props.theme.colors.red};
+  }
+`;
+
+export const SelectFieldStyled = styled.div`
+  position: relative;
+
+  label {
+    font-size: 0.875rem;
+    color: ${props => props.theme.colors.darkBlue};
+    opacity: 0.4;
+    margin-bottom: 0.3rem;
+    text-transform: capitalize;
+  }
+
+  img {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .field {
+    position: relative;
+    background: rgba(149, 151, 161, 0.1);
+    max-width: 30rem;
+    max-height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.63rem;
+    color: ${props => props.theme.colors.darkPurple};
+
+    :hover {
+      border: 1.5px solid ${props => props.theme.colors.extraLightBlue};
+    }
+
+    p {
+      opacity: 0.8;
+    }
+  }
+`;
+
+export const ListStyled = styled.div<ISelectListProps>`
+  display: ${props => (props.active ? 'flex' : 'none')};
+  position: absolute;
+  right: 0;
+  bottom: -11rem;
+  width: 7.938rem;
+  height: 10.5rem;
+  transition: all 1s ease;
+  flex-direction: column;
+  padding-top: 0.75rem;
+
+  overflow-y: auto;
+  background: ${props => props.theme.colors.white};
+  box-shadow: 0px 100px 80px rgba(157, 157, 174, 0.07),
+    0px 22px 24px rgba(157, 157, 174, 0.04),
+    0px 16px 10px rgba(157, 157, 174, 0.04),
+    0px 6px 6px rgba(157, 157, 174, 0.03);
+  border-radius: 0.25rem;
+  z-index: 10;
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  li {
+    width: 6.938rem;
+    height: 3rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: row;
+    color: ${props => props.theme.colors.darkBlue};
+    align-items: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+
+  hr {
+    height: 0.063rem;
+    width: 6rem;
+    background: ${props => props.theme.colors.extraLightBlue};
+    opacity: 0.1;
+    margin: 0;
+  }
+
+  li:hover {
+    background: rgba(217, 218, 242, 0.3);
+    color: ${props => props.theme.colors.lightBlue};
   }
 `;
