@@ -289,6 +289,7 @@ const HomeStyled = styled.div`
 
   .main-services-tile:first-of-type .main-services-figures-item {
     width: 100%;
+    max-height: 22.25rem;
   }
 
   .main-services-figures-item {
