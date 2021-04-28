@@ -11,7 +11,7 @@ const AuthLayout: FunctionComponent<IAuthLayoutProps> = props => {
     <>
       <Header />
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

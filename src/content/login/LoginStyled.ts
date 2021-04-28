@@ -75,7 +75,7 @@ export const Container = styled.div`
     }
     .link.forgot-password {
       float: right;
-      margin-top: -1rem;
+      font-weight: 600;
     }
 
     .login-form {
@@ -85,6 +85,10 @@ export const Container = styled.div`
       input {
         width: 100%;
         margin-bottom: 2rem;
+      }
+
+      div:nth-of-type(2) input {
+        margin-bottom: 1rem;
       }
 
       input::placeholder {

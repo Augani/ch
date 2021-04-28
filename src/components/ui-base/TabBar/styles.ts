@@ -18,6 +18,22 @@ export const TabBarStyled = styled.div<ITabBarProps>`
   cursor: pointer;
   box-shadow: 0 0 0 0.1rem ${props => props.theme.colors.purple};
 
+  .holder {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+
+    hr {
+      position: absolute;
+      width: 0.125;
+      height: 2rem;
+      right: 0;
+      background: #d1d6f5;
+      border-radius: 0.063rem;
+    }
+  }
+
   button.active {
     background: ${props => props.theme.colors.purple};
     color: white;
@@ -39,7 +55,8 @@ export const TabBarStyled = styled.div<ITabBarProps>`
     background: transparent;
     font-size: 1rem;
     height: 100%;
-    width: 50%;
+    width: 100%;
+    z-index: 10;
     border: none;
     cursor: pointer;
     color: ${props => props.theme.colors.purple};

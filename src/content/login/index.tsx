@@ -21,10 +21,11 @@ const Login: React.FC = () => {
             <TabBar
               size='large'
               className='tab-bar'
+              activeTab={3}
               tabs={['Personal account', 'Institution account']}
             />
             <small className='sub-title'>
-              Dont have an account?
+              Don&apos;t have an account?
               <a className='link' href='/signup'>
                 Sign up here.
               </a>
