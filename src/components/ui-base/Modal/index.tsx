@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { IModalProps } from './IModalProps';
-import ModalStyled from './ModalStyled';
+import { IModalProps } from './types';
+import ModalStyles from './styles';
 import { CSSTransition } from 'react-transition-group';
 import { isUndefined } from 'lodash';
 
@@ -33,7 +33,7 @@ const Modal: FunctionComponent<IModalProps> = props => {
       timeout={300}
       unmountOnExit
     >
-      <ModalStyled
+      <ModalStyles
         {...(!isUndefined(width) ? { width } : {})}
         {...(!isUndefined(height) ? { height } : {})}
       >
@@ -47,7 +47,7 @@ const Modal: FunctionComponent<IModalProps> = props => {
             ? { onClick: () => setIsModalOpen(false) }
             : {})}
         />
-      </ModalStyled>
+      </ModalStyles>
     </CSSTransition>
   );
 };

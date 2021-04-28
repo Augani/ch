@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { IButtonProps } from './type';
 
@@ -53,9 +52,5 @@ export const ButtonStyled = styled.button<IButtonProps>`
       props.mode === 'dark'
         ? props.theme.colors.extraLight
         : props.theme.colors.extraLight};
-  }
-
-  input.error {
-    box-shadow: 0 0 0 0.1rem ${props => props.theme.colors.red};
   }
 `;
