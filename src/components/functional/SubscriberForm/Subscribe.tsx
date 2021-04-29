@@ -5,33 +5,26 @@ import { TextField } from '@ui-base/TextField/Index';
 import { ISubscribeFormFieldProps, IErrorField } from './type';
 import { useFormik } from 'formik';
 import { Button } from '@ui-base/Button/Index';
+import Validation from '@utils/validation';
+import * as Yup from 'yup';
 const Subscribe: FunctionComponent = () => {
   const SendData = (data: ISubscribeFormFieldProps) => {};
-
-  const validateForm = (values: ISubscribeFormFieldProps) => {
-    const errors: IErrorField = {};
-    if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress) &&
-      values.emailAddress
-    ) {
-      errors.emailAddress = 'Email address is invalid';
-    }
-    return errors;
-  };
 
   const formik = useFormik({
     initialValues: {
       fullName: '',
-      emailAddress: ''
+      email: ''
     },
-    validate: validateForm,
+    validationSchema: Yup.object({
+      email: Validation.email
+    }),
     onSubmit: (values: ISubscribeFormFieldProps) => {
       SendData(values);
     }
   });
 
   const disabled: boolean = Object.values(formik.values).some((v: string) => {
-    return !v.length || formik.errors.emailAddress;
+    return !v.length || formik.errors.email;
   });
   return (
     <SubscribeStyled>
@@ -45,9 +38,7 @@ const Subscribe: FunctionComponent = () => {
             label='Full name'
             className='modal-c-input'
             type='text'
-            name='fullName'
-            onChange={formik.handleChange}
-            value={formik.values.fullName}
+            {...formik.getFieldProps('fullName')}
             placeholder='Enter full name'
             inputSize='large'
           />
@@ -57,11 +48,9 @@ const Subscribe: FunctionComponent = () => {
             label='Email Address'
             className='modal-c-input'
             type='email'
-            name='emailAddress'
-            onChange={formik.handleChange}
-            value={formik.values.emailAddress}
-            error={!!formik.errors.emailAddress}
-            errorText={formik.errors.emailAddress}
+            {...formik.getFieldProps('email')}
+            error={!!formik.errors.email && formik.touched.email}
+            errorText={formik.errors.email}
             placeholder='Enter email address'
             inputSize='large'
           />

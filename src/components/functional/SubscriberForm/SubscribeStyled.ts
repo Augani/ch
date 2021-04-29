@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SubscribeStyled = styled.div`
   .modal-c-signup {
     width: 25rem;
-    height: 26.23rem;
+    min-height: 26.23rem;
     background-color: ${props => props.theme.colors.white};
     border-radius: 0.2rem;
     position: relative;
