@@ -16,7 +16,8 @@ const Subscribe: FunctionComponent = () => {
       email: ''
     },
     validationSchema: Yup.object({
-      email: Validation.email
+      email: Validation.email,
+      fullName: Validation.required
     }),
     onSubmit: (values: ISubscribeFormFieldProps) => {
       SendData(values);
@@ -37,6 +38,8 @@ const Subscribe: FunctionComponent = () => {
           <TextField
             label='Full name'
             className='modal-c-input'
+            error={!!formik.errors.fullName && formik.touched.fullName}
+            errorText={formik.errors.fullName}
             type='text'
             {...formik.getFieldProps('fullName')}
             placeholder='Enter full name'
