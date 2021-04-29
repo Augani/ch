@@ -5,6 +5,13 @@ const HomeStyled = styled.div`
   .container {
     width: ${props => props.theme.sizes.container()};
     margin: 0 auto;
+
+    ${props =>
+      props.theme.mediaQueries('sm')(`
+
+      width: ${props.theme.sizes.container('sm')};
+
+    `)}
   }
 
   .hero-section {

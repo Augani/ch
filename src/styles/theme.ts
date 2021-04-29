@@ -1,4 +1,5 @@
 import React from 'react';
+import css from 'styled-components';
 
 const colors = {
   darkerBlue: '#23244b',
@@ -252,12 +253,17 @@ const mixins = {
     `
 };
 
-const breakPoints = {
+const breakpoints: { [key: string]: string } = {
   xs: '414.98px',
-  sm: '780.98px',
-  md: '968.98px',
-  lg: '1366.98px',
-  xl: '1600.98px'
+  sm: '768.98px',
+  md: '992.98px', // NOTE: note in use as per FIGMA design
+  lg: '1200.98px',
+  xl: '1440.98px'
+};
+
+export const mediaQueries = (key: keyof typeof breakpoints) => {
+  return (style: TemplateStringsArray | string) =>
+    `@media (max-width: ${breakpoints[key]}) { ${style} }`;
 };
 
 const sizes = {
@@ -269,19 +275,20 @@ const sizes = {
     }
 
     if (containerSize === 'lg') {
-      return '1140px';
+      return '944px';
     }
 
+    /* Note is use as per FIGMA design */
     if (containerSize === 'md') {
-      return '800px'; // can be any in future
+      return '800px';
     }
 
     if (containerSize === 'sm') {
-      return '500px'; // can be any in future
+      return '688px';
     }
 
     if (containerSize === 'xs') {
-      return '320px'; // can be any in future
+      return '320px';
     }
 
     return '1140px'; // can be any in future
@@ -295,10 +302,11 @@ const theme = {
   socialMediaColor,
   shadow,
   typography,
-  breakPoints,
+  breakpoints,
   sizes,
   mixins,
-  jsToCss
+  jsToCss,
+  mediaQueries
 };
 
 export default theme;
