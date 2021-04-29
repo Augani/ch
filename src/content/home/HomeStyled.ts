@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import styled from 'styled-components';
 
 const HomeStyled = styled.div`
@@ -6,11 +7,19 @@ const HomeStyled = styled.div`
     width: ${props => props.theme.sizes.container()};
     margin: 0 auto;
 
-    ${props =>
-      props.theme.mediaQueries('sm')(`
+    ${({ theme }) =>
+      theme.mediaQueries.down('lg')(`
+      width: ${theme.sizes.container('lg')};
+    `)}
 
-      width: ${props.theme.sizes.container('sm')};
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      width: ${theme.sizes.container('sm')};
+    `)}
 
+    ${({ theme }) =>
+      theme.mediaQueries.down('xs')(`
+      width: ${theme.sizes.container('xs')};
     `)}
   }
 

@@ -261,13 +261,25 @@ const breakpoints: { [key: string]: string } = {
   xl: '1440.98px'
 };
 
-export const mediaQueries = (key: keyof typeof breakpoints) => {
-  return (style: TemplateStringsArray | string) =>
-    `@media (max-width: ${breakpoints[key]}) { ${style} }`;
+type breakpointTypes = 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+
+export const mediaQueries = {
+  down: (key: breakpointTypes) => {
+    return (style: TemplateStringsArray | string) =>
+      `@media (max-width: ${breakpoints[key]}) { ${style} }`;
+  },
+  up: (key: breakpointTypes) => {
+    return (style: TemplateStringsArray | string) =>
+      `@media (min-width: ${breakpoints[key]}) { ${style} }`;
+  },
+  between: (min: breakpointTypes, max: breakpointTypes) => {
+    return (style: TemplateStringsArray | string) =>
+      `@media (min-width: ${breakpoints[min]}) and (max-width: ${breakpoints[max]}) { ${style} }`;
+  }
 };
 
 const sizes = {
-  container: (size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'): string => {
+  container: (size?: breakpointTypes): string => {
     const containerSize = size === undefined ? 'xl' : size;
 
     if (containerSize === 'xl') {
