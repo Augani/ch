@@ -4,17 +4,46 @@ import { TextFieldStyled, SelectFieldStyled, ListStyled } from './styles';
 import Danger from './icons/danger.svg';
 import ChevronUp from './icons/chevronUp.svg';
 import ChevronDown from './icons/chevronDown.svg';
+import EyeOpen from './icons/eyeOpen.svg';
+import EyeClose from './icons/eyeClose.svg';
 
 export const TextField: FunctionComponent<ITextFieldProps> = props => {
-  const { label, inputSize, error, errorText, className, ...rest } = props;
+  const {
+    label,
+    inputSize,
+    error,
+    errorText,
+    className,
+    type,
+    ...rest
+  } = props;
   const newClassName = className || '';
+  const [isItPass, setIsItPass] = React.useState(type);
+  const [inputType, setInputType] = React.useState(type);
+  const [visible, setVisible] = React.useState(false);
+
+  const togglePassword = () => {
+    if (inputType === 'text') {
+      setInputType('password');
+    } else {
+      setInputType('text');
+    }
+  };
+
+  const Eye = inputType === 'password' ? <EyeClose /> : <EyeOpen />;
   return (
-    <TextFieldStyled label={label} inputSize={inputSize}>
+    <TextFieldStyled label={label} type={type} inputSize={inputSize}>
       <label>{label}</label>
-      <input
-        className={`${error ? newClassName + ' error' : className}`}
-        {...rest}
-      />
+      <div className='inputHolder'>
+        <input
+          type={inputType}
+          className={`${error ? newClassName + ' error' : className}`}
+          {...rest}
+        />
+        {type === 'password' ? (
+          <span onClick={togglePassword}>{Eye}</span>
+        ) : null}
+      </div>
       {error ? (
         <div className='error-field'>
           <Danger />

@@ -95,6 +95,10 @@ export const Container = styled.div`
 
       input:not([type='checkbox']) {
         width: 100%;
+      }
+
+      .inputHolder {
+        width: 100%;
         margin-bottom: 2rem;
       }
 

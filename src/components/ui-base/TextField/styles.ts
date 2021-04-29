@@ -13,18 +13,35 @@ export const TextFieldStyled = styled.div<ITextFieldProps>`
     text-transform: capitalize;
   }
 
-  input {
-    background-color: ${props => props.theme.colors.light};
-    height: ${props => (props.inputSize === 'small' ? '2.2rem' : '2.7rem')};
-    width: ${props => (props.inputSize === 'small' ? '8rem' : '16rem')};
-    border-radius: 0.25rem;
-    border: none;
-    font-weight: 400;
-    font-size: ${props => (props.inputSize === 'small' ? '0.8rem' : '1rem')};
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    color: ${props => props.theme.colors.darkBlue};
+  .inputHolder {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    input {
+      background-color: ${props => props.theme.colors.light};
+      height: ${props => (props.inputSize === 'small' ? '2.2rem' : '2.7rem')};
+      width: ${props => (props.inputSize === 'small' ? '8rem' : '16rem')};
+      border-radius: 0.25rem;
+      border: none;
+      font-weight: 400;
+      font-size: ${props => (props.inputSize === 'small' ? '0.8rem' : '1rem')};
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      color: ${props => props.theme.colors.darkBlue};
+    }
+
+    span {
+      cursor: pointer;
+      position: absolute;
+      right: 0.938rem;
+      height: 1.063rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      opacity: 0.4;
+    }
   }
 
   input::placeholder {

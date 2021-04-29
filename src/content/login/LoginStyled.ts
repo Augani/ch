@@ -84,10 +84,14 @@ export const Container = styled.div`
 
       input {
         width: 100%;
+      }
+
+      .inputHolder {
+        width: 100%;
         margin-bottom: 2rem;
       }
 
-      div:nth-of-type(2) input {
+      div:nth-of-type(2) .inputHolder {
         margin-bottom: 1rem;
       }
 
