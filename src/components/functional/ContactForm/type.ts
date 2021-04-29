@@ -1,10 +1,10 @@
 export interface IContactFormFieldProps {
   fullName: string;
-  emailAddress: string;
+  email: string;
   subject: string;
   description: string;
 }
 
 export interface IErrorField {
-  emailAddress?: string;
+  email?: string;
 }

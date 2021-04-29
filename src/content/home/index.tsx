@@ -127,7 +127,7 @@ const Home: FunctionComponent = () => {
 
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <form className='main-services-figures-form'>
+                    {/* <form className='main-services-figures-form'>
                       <div className='f-form-formgroup'>
                         <label htmlFor='' className='f-form-label'>
                           I Have
@@ -149,7 +149,8 @@ const Home: FunctionComponent = () => {
                         </div>
                       </div>
                       <button className='f-form-submit'>Exchange</button>
-                    </form>
+                    </form> */}
+                    <img alt='Exchange' src='/assets/images/exchange.png' />
                   </div>
                 </div>
               </div>
