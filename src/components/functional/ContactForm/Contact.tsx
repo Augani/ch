@@ -30,8 +30,6 @@ const Contact: FunctionComponent = () => {
     return !v.length;
   });
 
-  console.log(disabled);
-
   return (
     <ContactStyled>
       <form onSubmit={formik.handleSubmit} className='modal-c-contact'>
