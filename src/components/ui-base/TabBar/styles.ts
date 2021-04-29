@@ -29,6 +29,9 @@ export const TabBarStyled = styled.div<ITabBarProps>`
       width: 0.125;
       height: 2rem;
       right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
       background: #d1d6f5;
       border-radius: 0.063rem;
     }

@@ -16,7 +16,7 @@ export const TabBar: FunctionComponent<ITabBarProps> = props => {
             >
               {tab}
             </button>
-            {index < tabs.length - 1 ? <hr /> : null}
+            {index < tabs.length - 1 && active - 1 !== index ? <hr /> : null}
           </div>
         ))}
     </TabBarStyled>
