@@ -10,7 +10,7 @@ const HomeStyled = styled.div`
   .hero-section {
     min-height: 45rem;
     background-color: ${props => props.theme.colors.darkerBlue};
-    background-image: url('/assets/images/homeBack.svg');
+    background-image: url('/assets/images/slider.png');
     background-position: right;
     background-repeat: no-repeat;
     margin-top: -4.6875rem;
@@ -141,7 +141,7 @@ const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('/assets/images/polygon4.png');
+  background-image: url('/assets/images/polygonfour.png');
   background-repeat: no-repeat;
   background-position: -4rem 30rem;
   margin-bottom: 4.125rem;
@@ -386,7 +386,7 @@ const HomeStyled = styled.div`
 }
 
 .competitive-cover {
-  background-image: url('/assets/images/polygon.svg');
+  background-image: url('/assets/images/polygonsix.png');
   background-position: 98% 1.5rem;
   background-repeat: no-repeat;
   padding-top: 2.938rem;
@@ -394,7 +394,7 @@ const HomeStyled = styled.div`
 
 .competitive-advantage-section {
   background-color: ${props => props.theme.colors.darkerBlue};
-  background-image: url('/assets/images/polygon.svg');
+  background-image: url('/assets/images/polygonsix.png');
   background-position: 98% -3.3125rem;
   background-repeat: no-repeat;
   margin-top: 1.875rem;
@@ -591,7 +591,7 @@ const HomeStyled = styled.div`
       min-height: 29.9375rem;
       width: calc(100% - 11.0625rem);
       margin: 0 auto;
-      background-image: url(/assets/images/roadmap.svg);
+      background-image: url(/assets/images/road.png);
       background-position: top left;
       background-repeat: no-repeat;
       display: flex;
