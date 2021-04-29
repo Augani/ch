@@ -19,7 +19,10 @@ const Contact: FunctionComponent = () => {
       description: ''
     },
     validationSchema: Yup.object({
-      email: Validation.email
+      email: Validation.email,
+      fullName: Validation.required,
+      subject: Validation.required,
+      description: Validation.required
     }),
     onSubmit: values => {
       SendData(values);
@@ -65,6 +68,8 @@ const Contact: FunctionComponent = () => {
             placeholder='Enter subject'
             label='Subject'
             type='text'
+            error={!!formik.errors.subject && formik.touched.subject}
+            errorText={formik.errors.subject}
             required
             {...formik.getFieldProps('subject')}
             className='modal-c-input'
