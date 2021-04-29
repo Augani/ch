@@ -24,7 +24,7 @@ const ExchangeRateCardStyles = styled.div<IExchangeRateCardProps>`
 
   .change-rate {
     color: ${props =>
-      parseInt(props.cryptoData.change) < 0
+      props.cryptoData.percentage < 0
         ? props.theme.colors.red
         : props.theme.colors.green};
     font-size: 0.938rem;
@@ -36,6 +36,7 @@ const ExchangeRateCardStyles = styled.div<IExchangeRateCardProps>`
     color: ${props => props.theme.colors.white};
     font-size: 0.938rem;
     font-weight: 700;
+    text-transform: uppercase;
   }
 
   .crypto-price {
@@ -51,7 +52,7 @@ const ExchangeRateCardStyles = styled.div<IExchangeRateCardProps>`
   }
 
   .chart-plot {
-    height: 5rem;
+    height: 3.6rem;
     width: 14rem;
     overflow: hidden;
   }

@@ -1,31 +1,84 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import Head from 'next/head';
 import GuestLayout from '@layout/Guest/GuestLayout';
 import HomeStyled from './HomeStyled';
 import { isUndefined } from 'lodash';
 import TeamData from './data/team.json';
 import SocialIcon from '@styles/helper/SocialIcon';
-import CryptoData from './data/Crypto.json';
-import Card from '@components/ExchangeRateCard';
-import ConnectSocket from '@utils/helpers/connectSocket';
+import Socket from '@services/socket';
+import { Tcallback } from '@services/socket/type';
+import { SOCKET_URL } from '@utils/constant';
+import ExchangeRateCard from '@components/ExchangeRateCard';
+import { ICrypto } from '@components/ExchangeRateCard/types';
 
 const Home: FunctionComponent = () => {
+  const coinsToMonitor = [
+    'btc/usdt',
+    'eth/usdt',
+    'ltc/usdt',
+    'ada/usdt',
+    'xmr/usdt'
+  ];
+  const initialCardValue = (symbol: string) => ({
+    symbol,
+    volume: 0,
+    price: 0,
+    percentage: 0
+  });
+
+  const [btcUsdt, setBtcUsdt] = useState<ICrypto>(initialCardValue('btc/usdt'));
+  const [ethUsdt, setEthUsdt] = useState<ICrypto>(initialCardValue('eth/usdt'));
+  const [ltcUsdt, setLtcUsdt] = useState<ICrypto>(initialCardValue('ltc/usdt'));
+  const [adaUsdt, setAdaUsdt] = useState<ICrypto>(initialCardValue('ada/usdt'));
+  const [xmrUsdt, setXmrUsdt] = useState<ICrypto>(initialCardValue('xmr/usdt'));
+
+  const updateCoinExchangeCard: Tcallback = (err, data) => {
+    if (err) return;
+
+    const coinData: ICrypto = JSON.parse(JSON.stringify(data));
+
+    if (coinData.symbol === 'btc/usdt') {
+      setBtcUsdt(coinData);
+    } else if (coinData.symbol === 'eth/usdt') {
+      setEthUsdt(coinData);
+    } else if (coinData.symbol === 'ltc/usdt') {
+      setLtcUsdt(coinData);
+    } else if (coinData.symbol === 'ada/usdt') {
+      setAdaUsdt(coinData);
+    } else if (coinData.symbol === 'xmr/usdt') {
+      setXmrUsdt(coinData);
+    }
+  };
+
   useEffect(() => {
-    const socket = new ConnectSocket(
-      // 'ws://3.121.186.68:9191/coin-price-monitor'
-      'ws://localhost:9191'
-    );
-    socket.send({
+    const ws = new Socket(SOCKET_URL.coinRateMonitor);
+
+    /************************************
+     * Monitor coin exchange rate change
+     ************************************/
+    ws.send({
       type: 'monitor/coins/exchange-rate',
+      subscribe: true,
       payload: {
-        coins: ['btc/usdt', 'eth/usdt']
+        coins: coinsToMonitor
       },
-      callback: (error, data) => {
-        if (error) return;
-        console.log('---data---');
-        console.log(data);
-      }
+      callback: updateCoinExchangeCard
     });
+
+    /************************************
+     * Let server know we are no longer need coin exchange rate changes update
+     ************************************/
+    // ws.send({
+    //   type: 'unmonitor',
+    //   payload: {
+    //     coins: coinsToMonitor
+    //   },
+    //   callback: (err, data) => {
+    //     if (err) return;
+    //     console.log('--- unmonitor ---');
+    //     console.log(data);
+    //   }
+    // });
   }, []);
 
   return (
@@ -48,15 +101,16 @@ const Home: FunctionComponent = () => {
         <section className='main-charts-container'>
           <div className='container'>
             <div className='main-charts'>
-              {CryptoData.map((h, index) => (
-                <Card key={index} cryptoData={h} />
-              ))}
+              <ExchangeRateCard cryptoData={btcUsdt} />
+              <ExchangeRateCard cryptoData={ethUsdt} />
+              <ExchangeRateCard cryptoData={ltcUsdt} />
+              <ExchangeRateCard cryptoData={adaUsdt} />
+              <ExchangeRateCard cryptoData={xmrUsdt} />
             </div>
           </div>
         </section>
 
         {/* Services section */}
-
         <section className='main-services'>
           <div className='container'>
             <h1 className='main-services-title'>Services</h1>

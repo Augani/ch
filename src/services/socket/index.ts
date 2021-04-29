@@ -1,26 +1,9 @@
 import { isUndefined, now, uniqueId } from 'lodash';
+import { TbinaryType, ISend } from './type';
 
-type Tpayload = {
-  [key: string]: number | string | string[];
-};
-type Tcallback = (error: boolean, data: unknown | undefined) => void;
-type TmessageType = string;
-type TbinaryType = 'arraybuffer' | 'blob';
-interface ISend {
-  type: TmessageType;
-  payload?: Tpayload;
-  subscribe?: boolean;
-  callback?: Tcallback;
-}
-interface IReceive {
-  type: TmessageType;
-  callback?: Tcallback;
-  subscribe?: boolean;
-}
-
-class ConnectSocket {
+class Socket {
   public address = 'ws://3.121.186.68:9191/';
-  private socket: WebSocket;
+  private ws: WebSocket;
   public binaryType: TbinaryType = 'arraybuffer';
   private requestIdsQueue: string[] = [];
 
@@ -32,8 +15,8 @@ class ConnectSocket {
     url?: string,
     binaryType: TbinaryType | undefined = 'arraybuffer'
   ) {
-    this.socket = new WebSocket(url ?? this.address, []);
-    this.socket.binaryType = binaryType;
+    this.ws = new WebSocket(url ?? this.address, []);
+    this.ws.binaryType = binaryType;
   }
 
   /**
@@ -110,15 +93,17 @@ class ConnectSocket {
       requestId: this.generateRequestId(),
       ...payloadData
     };
-    this.monitorRequestCallback(emitData.requestId);
+    if (!subscribe) {
+      this.monitorRequestCallback(emitData.requestId);
+    }
 
     /* Execute promise until socket open successfully if got failed reject() either resolve() */
     new Promise((resolve, reject) => {
       /* On socket open resolve promise and move to send data to socket */
-      this.socket.onopen = () => resolve(true);
+      this.ws.onopen = () => resolve(true);
 
       /* On socket error consider there is an error to connect with socket */
-      this.socket.onerror = () => reject(new Error('Connection error'));
+      this.ws.onerror = () => reject(new Error('Connection error'));
     })
       .then(isConnected => {
         /* Throw an error if socket is not connected. This case happen chance are too less */
@@ -127,10 +112,10 @@ class ConnectSocket {
         }
 
         /* Send data to socket */
-        this.socket.send(this.encodeMessage(emitData));
+        this.ws.send(this.encodeMessage(emitData));
 
         /* listen to socket for response from backend */
-        this.socket.onmessage = (response: MessageEvent) => {
+        this.ws.onmessage = (response: MessageEvent) => {
           const data = this.decodeMessage(response.data);
           /************************************************
            * listen socket but respond only if send three conditions true
@@ -139,17 +124,18 @@ class ConnectSocket {
            * callback function should not undefined on emit method as third param
            ************************************************/
           if (!subscribe) {
-            console.log('---this.requestIdsQueue---');
-            console.log(this.requestIdsQueue);
-            console.log(data);
             if (
               this.requestIdsQueue.includes(data.requestId) &&
               data?.type === type &&
               !isUndefined(callback)
             ) {
-              console.log(`----data.requestId---- ${data.requestId}`);
               this.unmonitorRequestCallback(data.requestId);
               callback?.(false, data);
+            }
+          } else {
+            if (data?.type === type && !isUndefined(callback)) {
+              this.unmonitorRequestCallback(data.requestId);
+              callback?.(false, data.payload);
             }
           }
         };
@@ -162,28 +148,24 @@ class ConnectSocket {
    * @param type {TmessageType} a message type you want listen. As an example: monitor-exchange-rate for change in exchange rate and update on web page
    * @param callback {Tcallback} when this method listen any update on websocket for a type you requested for. It will return data in callback function.
    */
-  public receive({ type, callback }: IReceive): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    new Promise((resolve, reject) => {
-      this.socket.onmessage = (e: MessageEvent) => {
-        console.log('e === ', e);
-        resolve(e);
-      };
-    })
-      .then((e: any) => {
-        let data: any;
-        try {
-          data = JSON.parse(e.data);
-        } catch (e) {
-          throw new Error('Invalid data received from server');
-        }
+  // public receive({ type, callback }: IReceive): void {
+  //   new Promise((resolve, reject) => {
+  //     this.ws.onopen = () => resolve(true);
+  //     this.ws.onerror = () => reject(new Error('Connection error'));
+  //   })
+  //     .then(isConnected => {
+  //       if (!isConnected) {
+  //         throw new Error('Something wrong during connect to socket');
+  //       }
 
-        callback?.(false, data);
-      })
-      .catch(() => {
-        callback?.(true, undefined);
-      });
-  }
+  //       this.ws.onmessage = (response: MessageEvent) => {
+  //         const data = this.decodeMessage(response.data);
+  //         if (data?.type === type && !isUndefined(callback)) {
+  //           callback?.(false, data);
+  //         }
+  //       };
+  //     })
+  //     .catch(e => callback?.(true, undefined));
+  // }
 }
-
-export default ConnectSocket;
+export default Socket;
