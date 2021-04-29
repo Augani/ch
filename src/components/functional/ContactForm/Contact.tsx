@@ -27,7 +27,7 @@ const Contact: FunctionComponent = () => {
   });
 
   const disabled: boolean = Object.values(formik.values).some((v: string) => {
-    return !v.length;
+    return !v.length || formik.errors.email;
   });
 
   return (
