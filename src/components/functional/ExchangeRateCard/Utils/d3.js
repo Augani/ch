@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
 import * as d3 from 'd3';
 
 const RenderChart = (svgRef, [data, mode]) => {
@@ -11,7 +10,8 @@ const RenderChart = (svgRef, [data, mode]) => {
     bottom: 40,
     left: 0
   };
-  const width = 460 - margin.left - margin.right;
+  // const width = 460 - margin.left - margin.right;
+  const width = 224 - margin.left - margin.right;
   const height = 100 - margin.top - margin.bottom;
   const svg = d3.select(svgRef);
 
@@ -30,10 +30,10 @@ const RenderChart = (svgRef, [data, mode]) => {
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
   /** Parse the date that is in the data for labeling and ordering */
-  data = data.map(l => {
+  data = data.map((l, index) => {
     return {
-      date: d3.timeParse('%Y-%m-%d')(l.date),
-      value: l.value
+      date: index,
+      value: l
     };
   });
 

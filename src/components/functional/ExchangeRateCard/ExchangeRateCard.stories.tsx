@@ -11,47 +11,20 @@ export default {
 
 export const Card = () => {
   const data = object('Data passed', {
-    name: 'IDR',
+    symbol: 'BTC/USDT',
     price: 7.2,
-    change: '+10.6',
+    percentage: 10.6,
     volume: 36767787687,
     history: [
-      {
-        date: '2018-04-17',
-        value: '5000.96'
-      },
-      {
-        date: '2018-04-18',
-        value: '8197.8'
-      },
-      {
-        date: '2018-04-19',
-        value: '8298.69'
-      },
-      {
-        date: '2018-04-20',
-        value: '8880.23'
-      },
-      {
-        date: '2018-04-21',
-        value: '8997.57'
-      },
-      {
-        date: '2018-04-22',
-        value: '9001.64'
-      },
-      {
-        date: '2018-04-23',
-        value: '8958.55'
-      },
-      {
-        date: '2018-04-24',
-        value: '8000.64'
-      },
-      {
-        date: '2018-04-25',
-        value: '7000.55'
-      }
+      5000.96,
+      8197.8,
+      8298.69,
+      8880.23,
+      8997.57,
+      9001.64,
+      8958.55,
+      8000.64,
+      7000.55
     ]
   });
   return <ExchangeRateCard cryptoData={data} />;

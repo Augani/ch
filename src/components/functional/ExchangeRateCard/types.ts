@@ -4,20 +4,17 @@ export interface IExchangeRateCardProps {
   cryptoData: ICrypto;
 }
 
-export interface ICryptoHistoryItem {
-  date: string;
-  value: string;
-}
+export type ICryptoHistoryItem = number;
 
 export interface ICrypto {
   /** the name of the crypto being passed to the component */
-  name: string;
+  symbol: string;
   /** the volume of crypto traded */
   volume: number;
   /** the price of the crypto */
   price: number;
   /** the percentage change in the price */
-  change: string;
+  percentage: number;
   /** a history of cyrpto data for a particular period */
   history?: ICryptoHistoryItem[];
 }

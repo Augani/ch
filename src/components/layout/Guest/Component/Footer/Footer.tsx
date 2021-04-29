@@ -14,13 +14,12 @@ const Header: FunctionComponent = () => {
         <div className='container'>
           <div className='location-change'>
             <div className='country'>
-              <CountryFlag className='country-flag india-flag'></CountryFlag>{' '}
-              India
+              <CountryFlag className='country-flag germany-flag' /> Germany
             </div>
           </div>
           <div className='navigation'>
             <nav>
-              <ActiveLink href='/team' activeClassName='active'>
+              <ActiveLink href='/about-us#team' activeClassName='active'>
                 <a className='footer-link'>team</a>
               </ActiveLink>
               <ActiveLink href='/about-us' activeClassName='active'>
