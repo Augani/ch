@@ -85,7 +85,7 @@ const Home: FunctionComponent = () => {
               <div className='main-services-tile'>
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <img alt='Wallet' src='/assets/images/bank.svg' />
+                    <img alt='Wallet' src='/assets/images/bank.png' />
                   </div>
                 </div>
 
@@ -110,7 +110,7 @@ const Home: FunctionComponent = () => {
 
                 <div className='main-services-figures-image'>
                   <div className='main-services-figures-item'>
-                    <img alt='Wallet' src='/assets/images/g-wallet.png' />
+                    <img alt='Wallet' src='/assets/images/gWallet.png' />
                   </div>
                 </div>
               </div>
