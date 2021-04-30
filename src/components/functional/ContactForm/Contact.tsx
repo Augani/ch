@@ -7,9 +7,13 @@ import { TextField } from '@ui-base/TextField/Index';
 import { Button } from '@ui-base/Button/Index';
 import Validation from '@utils/validation';
 import * as Yup from 'yup';
+import FeedBack from '@layout/Guest/Component/FeedBack/Feedback';
 
 const Contact: FunctionComponent = () => {
-  const SendData = (data: IContactFormFieldProps) => {};
+  const [dataSent, setDataSent] = React.useState(false);
+  const SendData = (data: IContactFormFieldProps) => {
+    setDataSent(true);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -32,6 +36,12 @@ const Contact: FunctionComponent = () => {
   const disabled: boolean = Object.values(formik.values).some((v: string) => {
     return !v.length || formik.errors.email;
   });
+
+  if (dataSent) {
+    return (
+      <FeedBack Title='Thank you' Message='We will get in touch shortly.' />
+    );
+  }
 
   return (
     <ContactStyled>
