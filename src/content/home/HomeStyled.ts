@@ -180,10 +180,7 @@ const HomeStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    ${({ theme }) =>
-      theme.mediaQueries.down('xs')(`
-      background-color: white;
-    `)}
+   
     ${({ theme }) =>
     theme.mediaQueries.up('md')(`
     background-image: url('/assets/images/polygonfour.png');
