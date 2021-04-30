@@ -2,6 +2,9 @@
 import styled from 'styled-components';
 
 const HomeStyled = styled.div`
+
+
+
   .container {
     width: ${props => props.theme.sizes.container()};
     margin: 0 auto;
@@ -89,23 +92,25 @@ const HomeStyled = styled.div`
     width: 100%;
     margin-top: -4rem;
 
+    ${({ theme }) =>
+      theme.mediaQueries.down('lg')(`
     .container {
-      ${({ theme }) =>
-        theme.mediaQueries.down('lg')(`
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        -webkit-overflow-scrolling: touch !important;
-        height: 10rem;
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
-      `)};
-    }
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      -webkit-overflow-scrolling: touch !important;
+      height: 160px;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+    `)}
+
+
   }
 
   .main-charts {
@@ -113,6 +118,9 @@ const HomeStyled = styled.div`
     flex-direction: row;
     position: absolute;
     justify-content: space-evenly;
+
+
+
 
     .main-charts-item {
       width: 14rem;
@@ -164,25 +172,62 @@ const HomeStyled = styled.div`
     }
   }
 
-  .main-services {
-    width: 100%;
-    padding-top: 10.063rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('/assets/images/polygonfour.png');
-    background-repeat: no-repeat;
-    background-position: -4rem 30rem;
-    margin-bottom: 4.125rem;
 
-    .main-services-container {
-      width: 70%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+.main-services {
+  width: 100%;
+  padding-top: 10.063rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('/assets/images/polygonfour.png');
+  background-repeat: no-repeat;
+  background-position: -4rem 30rem;
+  margin-bottom: 4.125rem;
+
+  .container {
+    ${({ theme }) =>
+      theme.mediaQueries.down('md')(`
+    width: 100%;
+  `)}
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+    width: 100%;
+  `)}
+
+  }
+
+
+
+  .main-services-figures {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr;
+    grid-template-areas: '. .';
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+    width: 90%;
+    padding: 0.12rem;
+  `)}
+  }
+
+  .main-services-title {
+    font-size: 2.5rem;
+    color: ${props => props.theme.colors.darkerBlue};
+    font-weight: bold;
+    position: relative;
+    line-height: 3.063rem;
+    text-align: left;
+
+    font-family: ${props => props.theme.typography.config.fontFamilyRobotoSlab};
+    ${props => props.theme.mixins.styledStroke}
+
+
+  }
 
     .main-services-figures {
       width: 95%;
@@ -192,24 +237,69 @@ const HomeStyled = styled.div`
       grid-template-areas: '. .';
     }
 
-    .main-services-title {
-      font-size: 2.5rem;
-      color: ${props => props.theme.colors.darkerBlue};
-      font-weight: bold;
-      position: relative;
-      line-height: 3.063rem;
-      text-align: left;
-      font-family: ${props =>
-        props.theme.typography.config.fontFamilyRobotoSlab};
-      ${props => props.theme.mixins.styledStroke}
-    }
+  .main-services-tile {
+    max-width: 100%;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 
-    .main-services-figures {
-      width: 100%;
-      max-width: 100%;
-      flex-direction: column;
-      display: flex;
-    }
+    place-items: center;
+    min-height: 17rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    ${({ theme }) =>
+      theme.mediaQueries.down('md')(`
+
+  `)}
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "text"
+      "image";
+  `)}
+  }
+
+  .main-services-tile:nth-of-type(even){
+    grid-template-areas: 'image text';
+    ${({ theme }) =>
+      theme.mediaQueries.down('xs')(`
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "text"
+      "image";
+  `)}
+
+  }
+
+  .main-services-tile:nth-of-type(odd){
+    grid-template-areas: 'text image';
+    ${({ theme }) =>
+      theme.mediaQueries.down('xs')(`
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "text"
+      "image";
+  `)}
+
+  }
+
+
+
+  .main-services-tile:first-of-type {
+    padding-bottom: 2.313rem;
+  }
 
     .main-services-tile {
       max-width: 100%;
@@ -224,48 +314,106 @@ const HomeStyled = styled.div`
       padding-right: 2rem;
     }
 
-    .main-services-tile:first-of-type {
-      padding-bottom: 2.313rem;
-    }
+  .main-services-tile:first-of-type::before {
+    content: '';
+    width: 0.15rem;
+    background: rgba(116, 187, 252, 1);
+    height: 60%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
 
-    .main-services-figures-title {
-      color: ${props => props.theme.colors.darkerBlue};
-      position: relative;
-      font-weight: 600;
-      font-size: 2.25rem;
-      text-align: left;
-      margin: 0;
-      margin-bottom: 1rem;
-      line-height: 3.064rem;
-    }
 
-    .main-services-tile:first-of-type::before {
-      content: '';
-      width: 0.15rem;
-      background: rgba(116, 187, 252, 1);
-      height: 60%;
-      bottom: 0;
-      left: 0;
-      position: absolute;
-    }
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+    width: 0;
+    height: 0;
+  `)}
+  }
 
-    .main-services-tile:nth-of-type(2) {
-      border-right: rgba(116, 187, 252, 0.6) solid 0.2rem;
-      border-bottom: rgba(116, 187, 252, 0.5) solid 0.2rem;
-      border-top: rgba(116, 187, 252, 0.7) solid 0.2rem;
-    }
+  .main-services-tile:first-of-type{
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      height: 0;
+      margin-bottom: 2.5rem;
+  `)}
+  }
+
+  .main-services-tile:nth-of-type(2), .main-services-tile:nth-of-type(4) {
+    border-right: rgba(116, 187, 252, 0.6) solid 0.2rem;
+    border-bottom: rgba(116, 187, 252, 0.5) solid 0.2rem;
+    border-top: rgba(116, 187, 252, 0.4) solid 0.2rem;
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      border: none;
+  `)}
+  }
+
+  .main-services-tile:nth-of-type(3) {
+    border-left: rgba(116, 187, 252, 0.4) solid 0.2rem;
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      border: none;
+  `)}
+  }
+
+  .main-services-tile:nth-of-type(5) {
+    border-left: rgba(116, 187, 252, 0.3) solid 0.2rem;
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      border: none;
+  `)}
+  }
+
+  .main-services-figures-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 17rem;
+    grid-area: text;
+    ${({ theme }) =>
+      theme.mediaQueries.down('md')(`
+      max-width: 15.813rem;
+  `)}
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      max-width: 20.125rem;
+      height: 100%;
+      padding-top: 2rem;
+  `)}
+  }
 
     .main-services-tile:nth-of-type(3) {
       border-left: rgba(116, 187, 252, 0.4) solid 0.2rem;
       border-bottom: rgba(116, 187, 252, 0.3) solid 0.2rem;
     }
 
-    .main-services-figures-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 17rem;
-    }
+    ${({ theme }) =>
+      theme.mediaQueries.down('md')(`
+      max-width: 15.813rem;
+  `)}
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      max-width: 20.125rem;
+  `)}
+
+  }
 
     .main-services-figures-sub {
       font-size: 1.125rem;
@@ -310,28 +458,77 @@ const HomeStyled = styled.div`
       );
     }
 
-    .main-services-tile:nth-of-type(4) {
-      background: linear-gradient(
-        50.45deg,
-        rgba(151, 204, 252, 0) 60%,
-        rgba(116, 187, 252, 1) 280.42%
-      );
-    }
+  .main-services-tile:nth-of-type(5) {
+    background: linear-gradient(230.45deg, rgba(151, 204, 252, 0) 55%, #74BBFC 229.42%);  }
 
-    .main-services-figures-image {
-      width: 28.813rem;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      border-radius: 0.1rem;
-      align-items: center;
-      justify-content: center;
-    }
+  .main-services-tile:nth-of-type(4) {
+    background: linear-gradient(50.45deg, rgba(151, 204, 252, 0) 60%, rgba(116, 187, 252, 1) 280.42%);
+  }
 
-    .main-services-tile:first-of-type .main-services-figures-item {
-      width: 100%;
-      max-height: 22.25rem;
-    }
+  .main-services-figures-image {
+    width: 28.813rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.1rem;
+    align-items: center;
+    grid-area: image;
+    justify-content: center;
+    ${({ theme }) =>
+      theme.mediaQueries.down('md')(`
+      max-width: 15.813rem;
+  `)}
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      max-width: 20.125rem;
+      padding-bottom: 4.5rem;
+  `)}
+
+
+  }
+
+  .main-services-tile:first-of-type .main-services-figures-item {
+    width: 100%;
+    max-height: 22.25rem;
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+      max-width: 20.125rem;
+      padding-bottom: 4.5rem;
+
+  `)}
+
+  }
+
+  .main-services-tile:first-of-type .main-services-figures-item img{
+
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+     display: none
+  `)}
+
+  }
+
+  .main-services-tile:first-of-type .main-services-figures-item button{
+    display: none;
+    margin: auto;
+    box-shadow: ${props => props.theme.shadow.four};
+
+
+  ${({ theme }) =>
+    theme.mediaQueries.down('xs')(`
+    margin-top: 2.5rem;
+     display: flex
+  `)}
+
+  }
 
     .main-services-figures-item {
       width: 70%;

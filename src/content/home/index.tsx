@@ -2,14 +2,12 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import Head from 'next/head';
 import GuestLayout from '@layout/Guest/GuestLayout';
 import HomeStyled from './HomeStyled';
-import { isUndefined } from 'lodash';
-import TeamData from './data/team.json';
-import SocialIcon from '@styles/helper/SocialIcon';
 import Socket from '@services/socket';
 import { Tcallback } from '@services/socket/type';
 import { SOCKET_URL } from '@utils/constant';
 import ExchangeRateCard from '@components/ExchangeRateCard';
 import { ICrypto } from '@components/ExchangeRateCard/types';
+import { Button } from '@ui-base/Button/Index';
 
 const Home: FunctionComponent = () => {
   const coinsToMonitor = [
@@ -151,6 +149,7 @@ const Home: FunctionComponent = () => {
                       <button className='f-form-submit'>Exchange</button>
                     </form> */}
                     <img alt='Exchange' src='/assets/images/exchange.png' />
+                    <Button mode='dark' size='large' text='Exchange' />
                   </div>
                 </div>
               </div>
@@ -202,6 +201,24 @@ const Home: FunctionComponent = () => {
                   <p className='main-services-figures-sub'>
                     Buy crypto over-the-counter minus the high brokerage fees.{' '}
                   </p>
+                </div>
+              </div>
+
+              <div className='main-services-tile'>
+                <div className='main-services-figures-text'>
+                  <h3 className='main-services-figures-title'>
+                    Derivatives trading
+                  </h3>
+                  <p className='main-services-figures-sub'>
+                    Trade crypto futures on margin or simply buy/sell crypto
+                    options.
+                  </p>
+                </div>
+
+                <div className='main-services-figures-image'>
+                  <div className='main-services-figures-item'>
+                    <img alt='Wallet' src='/assets/images/derivatives.png' />
+                  </div>
                 </div>
               </div>
             </div>
@@ -295,6 +312,73 @@ const Home: FunctionComponent = () => {
             </div>
           </div>
         </section>
+        {/* Our team section */}
+        {/* <section className='our-team-section' id='team'>
+          <div className='container'>
+            <h3 className='styled-stroke'>Our team</h3>
+            <div className='team-member-list'>
+              {TeamData?.map((member, index) => {
+                return (
+                  <div
+                    key={`member-${index}`}
+                    className='team-member direction-vertical'
+                  >
+                    <div
+                      className='member-avatar'
+                      style={{
+                        backgroundImage: `url('${member?.image}')`
+                      }}
+                    >
+                      {!isUndefined(member?.linkedIn) && (
+                        <a
+                          href={member.linkedIn}
+                          className='social-profile'
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <SocialIcon className='fab fa-linkedin-in icon-style linkedin-icon'></SocialIcon>
+                        </a>
+                      )}
+                    </div>
+                    <div className='member-details'>
+                      <h6>{member.name}</h6>
+                      <span className='subtitle'>{member.position}</span>
+                      {!isUndefined(member?.description) && (
+                        <p>{member?.description}</p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            {/*
+            <h5>Advisory Board</h5>
+            <div className='team-member-list'>
+              <div className='team-member direction-horizontal'>
+                <div
+                  className='member-avatar'
+                  style={{
+                    backgroundImage: "url('/assets/images/avatars/avatar1.png')"
+                  }}
+                >
+                  <a
+                    href='https://www.linkedin.com/company/coinhaven/'
+                    className='social-profile'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <SocialIcon className='fab fa-linkedin-in icon-style linkedin-icon'></SocialIcon>
+                  </a>
+                </div>
+                <div className='member-details'>
+                  <h6>member name</h6>
+                  <span className='subtitle'>position</span>
+                  <p>short job description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> */}
       </HomeStyled>
     </GuestLayout>
   );
