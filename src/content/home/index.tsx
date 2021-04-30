@@ -10,6 +10,7 @@ import { Tcallback } from '@services/socket/type';
 import { SOCKET_URL } from '@utils/constant';
 import ExchangeRateCard from '@components/ExchangeRateCard';
 import { ICrypto } from '@components/ExchangeRateCard/types';
+import { Button } from '@ui-base/Button/Index';
 
 const Home: FunctionComponent = () => {
   const coinsToMonitor = [
@@ -151,6 +152,7 @@ const Home: FunctionComponent = () => {
                       <button className='f-form-submit'>Exchange</button>
                     </form> */}
                     <img alt='Exchange' src='/assets/images/exchange.png' />
+                    <Button mode='dark' size='large' text='Exchange' />
                   </div>
                 </div>
               </div>
@@ -202,6 +204,24 @@ const Home: FunctionComponent = () => {
                   <p className='main-services-figures-sub'>
                     Buy crypto over-the-counter minus the high brokerage fees.{' '}
                   </p>
+                </div>
+              </div>
+
+              <div className='main-services-tile'>
+                <div className='main-services-figures-text'>
+                  <h3 className='main-services-figures-title'>
+                    Derivatives trading
+                  </h3>
+                  <p className='main-services-figures-sub'>
+                    Trade crypto futures on margin or simply buy/sell crypto
+                    options.
+                  </p>
+                </div>
+
+                <div className='main-services-figures-image'>
+                  <div className='main-services-figures-item'>
+                    <img alt='Wallet' src='/assets/images/derivatives.png' />
+                  </div>
                 </div>
               </div>
             </div>
@@ -297,7 +317,7 @@ const Home: FunctionComponent = () => {
         </section>
 
         {/* Our team section */}
-        <section className='our-team-section' id='team'>
+        {/* <section className='our-team-section' id='team'>
           <div className='container'>
             <h3 className='styled-stroke'>Our team</h3>
             <div className='team-member-list'>
@@ -361,9 +381,8 @@ const Home: FunctionComponent = () => {
                 </div>
               </div>
             </div>
-            */}
           </div>
-        </section>
+        </section> */}
       </HomeStyled>
     </GuestLayout>
   );
