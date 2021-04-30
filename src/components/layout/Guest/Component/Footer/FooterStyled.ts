@@ -11,9 +11,56 @@ export const FooterStyled = styled.footer`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    ${({ theme }) =>
+      theme.mediaQueries.down('lg')(`
+      width: ${theme.sizes.container('lg')};
+    `)}
+
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      width: ${theme.sizes.container('sm')};
+      flex-direction: column-reverse;
+    `)}
+
+    ${({ theme }) =>
+      theme.mediaQueries.down('xs')(`
+      width: ${theme.sizes.container('xs')};
+      flex-direction: column-reverse;
+      padding-bottom: 2.875rem;
+    `)}
+  }
+
+  .footer-left-panel {
+    display: flex;
+    ${({ theme }) =>
+      theme.mediaQueries.down('xs')(`
+      flex-direction: column;
+    `)}
+
+    .navigation {
+      ${({ theme }) =>
+        theme.mediaQueries.down('xs')(`
+        flex-direction: column;
+        display: flex;
+      `)}
+    }
+  }
+
+  .footer-right-panel {
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      padding-bottom: 2.5rem;
+    `)}
   }
 
   nav {
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+        display: flex;
+        flex-direction: column;
+        padding-left: 0.9375rem;
+    `)}
+
     a {
       color: ${props => props.theme.colors.white};
       opacity: 0.7;
@@ -29,6 +76,10 @@ export const FooterStyled = styled.footer`
         color: ${props => props.theme.colors.lightBlue};
         opacity: 1;
       }
+      ${({ theme }) =>
+        theme.mediaQueries.down('sm')(`
+        margin: .5rem 1.25rem;
+      `)}
     }
   }
 
@@ -52,6 +103,12 @@ export const FooterStyled = styled.footer`
 
   .location-change {
     width: 9.375rem;
+
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      padding-bottom: 0.625rem;
+  `)}
+
     .country {
       color: rgba(255, 255, 255, 0.7);
       display: flex;

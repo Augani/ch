@@ -4,6 +4,20 @@ const AboutUsStyled = styled.div`
   .container {
     width: ${props => props.theme.sizes.container()};
     margin: 0 auto;
+    ${({ theme }) =>
+      theme.mediaQueries.down('lg')(`
+      width: ${theme.sizes.container('lg')};
+    `)}
+
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      width: ${theme.sizes.container('sm')};
+    `)}
+
+    ${({ theme }) =>
+      theme.mediaQueries.down('xs')(`
+      width: ${theme.sizes.container('xs')};
+    `)}
   }
 
   .hero-section {
@@ -16,12 +30,20 @@ const AboutUsStyled = styled.div`
     margin-top: -4.6875rem;
     display: flex;
     align-items: center;
+    ${({ theme }) =>
+      theme.mediaQueries.down('lg')(`
+          margin-top: -5.5rem;
+        `)};
     h1 {
       color: ${props => props.theme.colors.white};
       font-size: ${props => props.theme.typography.pxToRem(48)};
       font-family: ${props =>
         props.theme.typography.config.fontFamilyRobotoSlab};
       ${props => props.theme.mixins.styledStroke}
+      ${({ theme }) =>
+        theme.mediaQueries.down('lg')(`
+        font-size: ${theme.typography.pxToRem(40)};
+    `)}
     }
   }
 
@@ -32,6 +54,11 @@ const AboutUsStyled = styled.div`
     .container {
       padding-left: 5rem;
       padding-right: 5rem;
+      ${({ theme }) =>
+        theme.mediaQueries.down('lg')(`
+        padding-left: 0;
+        padding-right: 0;
+    `)}
     }
   }
 
@@ -40,6 +67,17 @@ const AboutUsStyled = styled.div`
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
 
+    .container {
+      ${({ theme }) =>
+        theme.mediaQueries.down('sm')(`
+        width: calc(100% - 1rem);
+    `)}
+      ${({ theme }) =>
+        theme.mediaQueries.down('xs')(`
+        width: 100%;
+    `)}
+    }
+
     .statistics-numbers {
       display: flex;
       flex-direction: row;
@@ -47,6 +85,20 @@ const AboutUsStyled = styled.div`
       align-items: flex-start;
       height: 18rem;
       padding-top: 2.375rem;
+
+      ${({ theme }) =>
+        theme.mediaQueries.down('xs')(`
+        height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+      `)}
+
+      ${({ theme }) =>
+        theme.mediaQueries.down('xs')(`
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      `)}
 
       &.light-blue-horizontal-gradient {
         background-image: linear-gradient(
@@ -60,6 +112,12 @@ const AboutUsStyled = styled.div`
 
       .statistics-numbers-item {
         width: 12.5rem;
+
+        ${({ theme }) =>
+          theme.mediaQueries.down('lg')(`
+          padding-top: 3.375rem;
+        `)};
+
         h1 {
           font-size: 3rem;
           font-family: ${props =>
@@ -70,6 +128,12 @@ const AboutUsStyled = styled.div`
           margin-top: 0;
           margin-bottom: 1.375rem;
           text-align: center;
+          ${({ theme }) =>
+            theme.mediaQueries.down('lg')(`
+            font-size: 2.5rem;
+            line-height: 3.75rem;
+            letter-spacing: -0.5px;
+        `)}
         }
 
         p {
@@ -84,6 +148,11 @@ const AboutUsStyled = styled.div`
 
     .statistics-heading {
       padding: 0.4375rem 6.25rem;
+      ${({ theme }) =>
+        theme.mediaQueries.down('lg')(`
+        padding: 0.4375rem 0;
+      `)};
+
       h2 {
         font-size: 2.625rem;
         font-family: ${props =>
@@ -94,6 +163,23 @@ const AboutUsStyled = styled.div`
         text-align: center;
         color: ${props => props.theme.colors.darkBlue};
         margin: 0;
+
+        ${({ theme }) =>
+          theme.mediaQueries.down('lg')(`
+          font-weight: ${theme.typography.config.fontWeightSemiBold};
+          font-size: 2.875rem;
+          line-height: 3.9375rem;
+          text-align: center;
+          letter-spacing: -1.5px;
+        `)}
+
+        ${({ theme }) =>
+          theme.mediaQueries.down('xs')(`
+          font-size: 2.25rem;
+          line-height: 3.0625rem;
+          text-align: center;
+          letter-spacing: -0.5px;
+      `)}
       }
     }
   }
@@ -121,6 +207,10 @@ const AboutUsStyled = styled.div`
     flex-direction: row;
     align-items: center;
     padding: 1rem 0 3rem;
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      flex-direction: column;
+    `)}
   }
 
   .our-team-section {
@@ -138,6 +228,11 @@ const AboutUsStyled = styled.div`
       ${props => props.theme.mixins.styledStroke};
       ::after {
         top: 2.1875rem;
+
+        ${({ theme }) =>
+          theme.mediaQueries.down('sm')(`
+          top: -1.1875rem;
+        `)}
       }
     }
 
@@ -155,6 +250,11 @@ const AboutUsStyled = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      padding 0;
+      flex-direction: column;
+    `)}
   }
 
   .team-member {

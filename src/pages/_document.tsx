@@ -46,6 +46,10 @@ export default class MyDocument extends Document {
             rel='icon'
             href='https://coinhaven.com/wp-content/uploads/2020/08/favicon.png'
           />
+          <meta
+            name='viewport'
+            content='width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no'
+          />
         </Head>
         <body>
           <Main />

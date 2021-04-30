@@ -28,11 +28,13 @@ const AboutUs: FunctionComponent = () => {
             <p>
               <strong>Coinhaven</strong> is an all-in-one trading and exchange
               platform where you can easily buy Bitcoin and other crypto assets
-              with U.S. Dollars. You can also exchange your Bitcoin for other
+              with a variety of fiat currencies (USD, EUR, GBP, AUD, NGN, KES,
+              GHC, MZN, ZAR). You can also exchange your Bitcoin for other
               crypto assets - such as Ethereum - with just a few clicks.
               Coinhaven’s detailed, real-time charts can help you seize
               investment opportunities by giving you a complete picture of the
               price action.
+              <br />
               <strong>
                 Cryptocurrency trading can be easy, quick and intuitive.
                 Coinhaven is here to prove it.
