@@ -91,6 +91,25 @@ const HomeStyled = styled.div`
   .main-charts-container {
     width: 100%;
     margin-top: -4rem;
+
+    ${({ theme }) => theme.mediaQueries.down('lg')(`
+    .container {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      -webkit-overflow-scrolling: touch !important;
+      height: 160px;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+    `)}
+
+
   }
 
   .main-charts {
@@ -98,6 +117,8 @@ const HomeStyled = styled.div`
     flex-direction: row;
     position: absolute;
     justify-content: space-evenly;
+
+
 
 
     .main-charts-item {
