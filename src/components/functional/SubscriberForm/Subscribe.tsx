@@ -7,8 +7,12 @@ import { useFormik } from 'formik';
 import { Button } from '@ui-base/Button/Index';
 import Validation from '@utils/validation';
 import * as Yup from 'yup';
+import FeedBack from '@layout/Guest/Component/FeedBack/Feedback';
 const Subscribe: FunctionComponent = () => {
-  const SendData = (data: ISubscribeFormFieldProps) => {};
+  const [dataSent, setDataSent] = React.useState(false);
+  const SendData = (data: ISubscribeFormFieldProps) => {
+    setDataSent(true);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -27,6 +31,16 @@ const Subscribe: FunctionComponent = () => {
   const disabled: boolean = Object.values(formik.values).some((v: string) => {
     return !v.length || formik.errors.email;
   });
+
+  if (dataSent) {
+    return (
+      <FeedBack
+        Title='Thank you'
+        Message='You will stay updated with our newsletter and will be notified about new milestones.'
+      />
+    );
+  }
+
   return (
     <SubscribeStyled>
       <form onSubmit={formik.handleSubmit} className='modal-c-signup'>
