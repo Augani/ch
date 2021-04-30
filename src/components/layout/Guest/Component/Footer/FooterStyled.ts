@@ -55,7 +55,7 @@ export const FooterStyled = styled.footer`
 
   nav {
     ${({ theme }) =>
-      theme.mediaQueries.down('sm')(`
+      theme.mediaQueries.down('xs')(`
         display: flex;
         flex-direction: column;
         padding-left: 0.9375rem;

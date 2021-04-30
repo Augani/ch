@@ -2,9 +2,6 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import Head from 'next/head';
 import GuestLayout from '@layout/Guest/GuestLayout';
 import HomeStyled from './HomeStyled';
-import { isUndefined } from 'lodash';
-import TeamData from './data/team.json';
-import SocialIcon from '@styles/helper/SocialIcon';
 import Socket from '@services/socket';
 import { Tcallback } from '@services/socket/type';
 import { SOCKET_URL } from '@utils/constant';
@@ -315,7 +312,6 @@ const Home: FunctionComponent = () => {
             </div>
           </div>
         </section>
-
         {/* Our team section */}
         {/* <section className='our-team-section' id='team'>
           <div className='container'>
