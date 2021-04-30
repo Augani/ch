@@ -175,12 +175,12 @@ const HomeStyled = styled.div`
 
   .main-services {
     width: 100%;
-    padding-top: 4.5rem;
+    padding-top: 10.5rem;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
     ${({ theme }) =>
     theme.mediaQueries.up('md')(`
     background-image: url('/assets/images/polygonfour.png');
