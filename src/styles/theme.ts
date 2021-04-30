@@ -1,5 +1,4 @@
 import React from 'react';
-import css from 'styled-components';
 
 const colors = {
   darkerBlue: '#23244b',
@@ -232,27 +231,6 @@ const typography = {
   pxToRem: convertPxToRem
 };
 
-const mixins = {
-  // Can be improve letter on
-  styledStroke: `
-    position: relative;
-    &::before {
-        content: "";
-        padding-left: 6.25rem;
-    }
-    &::after {
-        content: "";
-        width: 4.5625rem;
-        height: 0.1875rem;
-        display: block;
-        position: absolute;
-        top: 1.875rem;
-        background-image: ${gradients.lightHorizontal}
-        );
-    }
-    `
-};
-
 const breakpoints: { [key: string]: string } = {
   xs: '414.98px',
   sm: '768.98px',
@@ -303,8 +281,34 @@ const sizes = {
       return '320px';
     }
 
-    return '1140px'; // can be any in future
+    return '1140px';
   }
+};
+
+const mixins = {
+  // Can be improve letter on
+  styledStroke: `
+    position: relative;
+    &::before {
+        content: "";
+        padding-left: 6.25rem;
+        ${mediaQueries.down('sm')(`
+          padding-left: 0;
+        `)}
+    }
+    &::after {
+        content: "";
+        width: 4.5625rem;
+        height: 0.1875rem;
+        display: block;
+        position: absolute;
+        top: 1.875rem;
+        background-image: ${gradients.lightHorizontal};
+        ${mediaQueries.down('sm')(`
+          top: -1.5625rem;
+        `)}
+    }
+    `
 };
 
 const theme = {

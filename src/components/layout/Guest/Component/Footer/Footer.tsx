@@ -6,8 +6,8 @@ import Link from 'next/link';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 import ScrollTop from '../ScrollTop';
 import Modal from '@ui-base/Modal';
-import Subscribe from '../../../../functional/SubscriberForm/Subscribe';
-import Contact from '../../../../functional/ContactForm/Contact';
+import Subscribe from '@components/SubscriberForm/Subscribe';
+import Contact from '@components/ContactForm/Contact';
 
 const Header: FunctionComponent = () => {
   const [openSubscriberForm, setOpenSubscriberForm] = useState(false);
@@ -15,8 +15,9 @@ const Header: FunctionComponent = () => {
   return (
     <FooterStyled className='footer'>
       <ScrollTop />
-      <footer className='footer'>
-        <div className='container'>
+
+      <div className='container'>
+        <div className='footer-left-panel'>
           <div className='location-change'>
             <div className='country'>
               <CountryFlag className='country-flag germany-flag' /> Germany
@@ -40,6 +41,8 @@ const Header: FunctionComponent = () => {
               </ActiveLink>
             </nav>
           </div>
+        </div>
+        <div className='footer-right-panel'>
           <div className='social-account'>
             <div className='logo'>
               <Link href='/'>
@@ -101,10 +104,11 @@ const Header: FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <Copyright>
-          Ⓒ {new Date().getFullYear()} coinhaven.com All rights reserved
-        </Copyright>
-      </footer>
+      </div>
+      <Copyright>
+        Ⓒ {new Date().getFullYear()} coinhaven.com All rights reserved
+      </Copyright>
+
       <Modal
         isOpen={openSubscriberForm}
         onClose={() => setOpenSubscriberForm(false)}

@@ -16,7 +16,7 @@
 }
 .transition-enter-active {
     opacity: 1;
-    transition: opacity 400ms, transform 400ms;
+    transition: opacity 500ms, transform 500ms;
 }
 .transition-enter-done {
 }
@@ -26,7 +26,7 @@
 }
 .transition-exit-active {
     opacity: 0;
-    transition: opacity 400ms, transform 400ms;
+    transition: opacity 500ms, transform 500ms;
 }
 .transition-exit-done {
 }

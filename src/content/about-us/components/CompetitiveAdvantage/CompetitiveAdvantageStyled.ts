@@ -4,6 +4,11 @@ const CompetitiveAdvantageStyled = Styled.div`
     
     width: 17.5rem;
     text-align: center;
+    ${({ theme }) =>
+      theme.mediaQueries.down('sm')(`
+      padding-bottom: 1.875rem;
+    `)}
+    
     
     .competitive-icon {
       display: inline-block;
