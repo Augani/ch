@@ -175,7 +175,7 @@ const HomeStyled = styled.div`
 
   .main-services {
     width: 100%;
-    padding-top: 10.063rem;
+    padding-top: 4.5rem;
     position: relative;
     display: flex;
     flex-direction: column;
