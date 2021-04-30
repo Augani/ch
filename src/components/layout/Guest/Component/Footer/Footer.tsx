@@ -1,12 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { FooterStyled, CountryFlag, Copyright } from './FooterStyled';
 import SocialIcon from '@styles/helper/SocialIcon';
 
 import Link from 'next/link';
 import ActiveLink from '@utils-components/ActiveLink/ActiveLink';
 import ScrollTop from '../ScrollTop';
+import Modal from '@ui-base/Modal';
+import Subscribe from '../../../../functional/SubscriberForm/Subscribe';
+import Contact from '../../../../functional/ContactForm/Contact';
 
 const Header: FunctionComponent = () => {
+  const [openSubscriberForm, setOpenSubscriberForm] = useState(false);
+  const [openContactUsForm, setOpenContactUsForm] = useState(false);
   return (
     <FooterStyled className='footer'>
       <ScrollTop />
@@ -25,8 +30,13 @@ const Header: FunctionComponent = () => {
               <ActiveLink href='/about-us' activeClassName='active'>
                 <a className='footer-link'>about us</a>
               </ActiveLink>
-              <ActiveLink href='/contact-us' activeClassName='active'>
-                <a className='footer-link'>contact us</a>
+              <ActiveLink activeClassName='active' href='#contactus'>
+                <a
+                  onClick={() => setOpenContactUsForm(true)}
+                  className='footer-link'
+                >
+                  contact us
+                </a>
               </ActiveLink>
             </nav>
           </div>
@@ -95,6 +105,21 @@ const Header: FunctionComponent = () => {
           Ⓒ {new Date().getFullYear()} coinhaven.com All rights reserved
         </Copyright>
       </footer>
+      <Modal
+        isOpen={openSubscriberForm}
+        onClose={() => setOpenSubscriberForm(false)}
+      >
+        <Subscribe />
+      </Modal>
+      {/**
+       * Contact Us form modal
+       */}
+      <Modal
+        isOpen={openContactUsForm}
+        onClose={() => setOpenContactUsForm(false)}
+      >
+        <Contact />
+      </Modal>
     </FooterStyled>
   );
 };
